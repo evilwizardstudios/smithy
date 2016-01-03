@@ -1,2 +1,3 @@
-# selectionator
-documentation and demo for the Selectionator Unity3D asset
+# SMITHY
+
+Landing Page and Documentation for the SMITHY Unity Asset

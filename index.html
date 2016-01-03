@@ -3,44 +3,55 @@
 	<head>
 		<meta http-equiv="content-type" content="text/html; charset=UTF-8">
 		<meta charset="utf-8">
-		<title>3 Carousel Layout (BS 3)</title>
-		<meta name="generator" content="Bootply" />
+		<meta name="description" content="Smithy is a developer and artist-focused procedural generation framework for the Unity Game Engine">
+		<meta name="author" content="2016 Evil Wizard Studios">
+		<title>Smithy Procedural Generation Framework</title>
 		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 		<link href="css/bootstrap.min.css" rel="stylesheet">
 		<!--[if lt IE 9]>
 			<script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
 		<![endif]-->
-		<link href="css/styles.css" rel="stylesheet">
+		<link href='https://fonts.googleapis.com/css?family=Lato:400,900,300' rel='stylesheet' type='text/css'>
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+		<!-- script references -->
+		<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.2/jquery.min.js"></script>
+
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+<link href="css/flatly.css" rel="stylesheet">
+
+<link href="css/styles.css" rel="stylesheet">
+
+			<script src="js/core.js"></script>
 	</head>
+
+
 	<body>
 <div class="navbar-wrapper">
   <div class="container">
     <div class="navbar navbar-default navbar-fixed-top">
-      
+
         <div class="navbar-header">
 	    <a class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
 	      <span class="icon-bar"></span>
 	      <span class="icon-bar"></span>
 	      <span class="icon-bar"></span>
 	    </a>
-        <a class="navbar-brand" href="#">Bootstrap 3</a>
+        <a class="scroll navbar-brand" href="#top">SMITHY</a>
         </div>
         <div class="navbar-collapse collapse">
           <ul class="nav navbar-nav">
-            <li class="active"><a href="#">Home</a></li>
-            <li><a href="http://www.bootply.com" target="ext">About</a></li>
-            <li><a href="#contact">Contact</a></li>
-            <li class="dropdown">
-              <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <b class="caret"></b></a>
-              <ul class="dropdown-menu">
-                <li><a href="#">Action</a></li>
-                <li><a href="#">Another action</a></li>
-                <li><a href="#">Something else here</a></li>
-                <li class="divider"></li>
-                <li><a href="#">Separated link</a></li>
-                <li><a href="#">One more separated link</a></li>
-              </ul>
-            </li>
+
+						<li><a class="scroll" href="#top">Home</a></li>
+
+						<li> <a class="scroll" href="#start">About </a></li>
+
+						<li><a class="scroll" href="#editions">Get Smithy</a></li>
+
+						<li><a class="scroll" href="#contact">Contact</a></li>
+
+						<li><a href="./docpage/">Documentation</a></li>
+
           </ul>
         </div>
 
@@ -49,93 +60,83 @@
 </div><!-- /navbar wrapper -->
 
 
-<!-- Carousel
+<!-- Hero Image
 ================================================== -->
-<div id="myCarousel" class="carousel slide">
-  <!-- Indicators -->
-  <ol class="carousel-indicators">
-    <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-    <li data-target="#myCarousel" data-slide-to="1"></li>
-    <li data-target="#myCarousel" data-slide-to="2"></li>
-  </ol>
-  <div class="carousel-inner">
-    <div class="item active">
-      <img src="/assets/example/bg_suburb.jpg" style="width:100%" class="img-responsive">
-      <div class="container">
-        <div class="carousel-caption">
-          <h1>Bootstrap 3 Carousel Layout</h1>
-          <p></p>
-          <p><a class="btn btn-lg btn-primary" href="http://getbootstrap.com">Learn More</a>
-        </p>
-        </div>
-      </div>
-    </div>
-    <div class="item">
-      <img src="http://lorempixel.com/2000/600/abstract/1" class="img-responsive">
-      <div class="container">
-        <div class="carousel-caption">
-          <h1>Changes to the Grid</h1>
-          <p>Bootstrap 3 still features a 12-column grid, but many of the CSS class names have completely changed.</p>
-          <p><a class="btn btn-large btn-primary" href="#">Learn more</a></p>
-        </div>
-      </div>
-    </div>
-    <div class="item">
-      <img src="http://placehold.it/1500X500" class="img-responsive">
-      <div class="container">
-        <div class="carousel-caption">
-          <h1>Percentage-based sizing</h1>
-          <p>With "mobile-first" there is now only one percentage-based grid.</p>
-          <p><a class="btn btn-large btn-primary" href="#">Browse gallery</a></p>
-        </div>
-      </div>
-    </div>
-  </div>
-  <!-- Controls -->
-  <a class="left carousel-control" href="#myCarousel" data-slide="prev">
-    <span class="icon-prev"></span>
-  </a>
-  <a class="right carousel-control" href="#myCarousel" data-slide="next">
-    <span class="icon-next"></span>
-  </a>  
+<div id="top" class="jumbotron">
+  <div class="container">
+		<h1><b>SMITHY</b></h1>
+	  <h2><b>A PROCEDURAL GENERATION FRAMEWORK</b></h2>
+		<h3>FOR THE UNITY GAME ENGINE</h3>
+		<div class="row">
+			<div class="col-md-4 text-center">
+	   		<a class="scroll btn btn-success btn-lg" href="#start" role="button"><i class="fa fa-arrow-circle-down"></i>  Learn More</a>
+			</div>
+			<div class="col-md-4 text-center">
+		 		<a class="scroll btn btn-success btn-lg" href="#editions" role="button"><i class="fa fa-download"></i>  Unity Asset Store</a>
+	 		</div>
+			<div class="col-md-4 text-center">
+	 			<a class="btn btn-success btn-lg" href="./docpage/" role="button"><i class="fa fa-book"></i>  Documentation</a>
+			</div>
+		</div>
+	</div>
 </div>
-<!-- /.carousel -->
+<!-- /.full -->
 
+
+	<section>
+			<div class="container-fluid details" style="margin-top: -50px;">
+					<div class="row">
+						<div class="container">
+							<div class="col-md-12">
+									<h1 class="section-heading" id="start">Smithy for the Unity Game Engine</h1>
+									<p class="lead section-lead">What is it?</p>
+									<p class="section-paragraph">Smithy is a Unity Asset that makes it easy to employ <a href="#">procedural generation techniques</a>
+																							 in Unity projects. It's a series of tools that connects GameObjects according to your parameters to create
+																						   hundreds, thousands, or tens of thousands of combinations of Unity GameObjects and their components.</p>
+							</div>
+						</div>
+					</div>
+					<!-- /.row -->
+			</div>
+			<!-- /.container -->
+	</section>
 
 <!-- Marketing messaging and featurettes
 ================================================== -->
 <!-- Wrap the rest of the page in another container to center all the content. -->
-
-<div class="container marketing">
-
-  <!-- Four columns of text below the carousel -->
+<div class="container marketing scroll">
+<br>
   <div class="row">
-    <div class="col-md-3 text-center">
+    <div class="col-md-4 text-center">
       <img class="img-circle" src="http://placehold.it/140x140">
-      <h2>Mobile-first</h2>
-      <p>Tablets, phones, laptops. The new 3 promises to be mobile friendly from the start.</p>
-      <p><a class="btn btn-default" href="#">View details »</a></p>
+      <h2>Poweful</h2>
+      <p>Use a handful of GameObjects and Materials to quickly create thousands of unique project assets, in-editor or at runtime.</p>
     </div>
-    <div class="col-md-3 text-center">
+    <div class="col-md-4 text-center">
       <img class="img-circle" src="http://placehold.it/140x140">
-      <h2>One Fluid Grid</h2>
-      <p>There is now just one percentage-based grid for Bootstrap 3. Customize for fixed widths.</p>
-      <p><a class="btn btn-default" href="#">View details »</a></p>
+      <h2>Flexible</h2>
+      <p>Built around Unity's Component system, allowing for quick, simple, and seamless integration with existing projects.</p>
     </div>
-    <div class="col-md-3 text-center">
+    <div class="col-md-4 text-center">
       <img class="img-circle" src="http://placehold.it/140x140">
-      <h2>LESS is More</h2>
-      <p>Improved support for mixins make the new Bootstrap 3 easier to customize.</p>
-      <p><a class="btn btn-default" href="#">View details »</a></p>
-    </div>
-	<div class="col-md-3 text-center">
-      <img class="img-circle" src="http://placehold.it/140x140">
-      <h2>LESS is More</h2>
-      <p>Improved support for mixins make the new Bootstrap 3 easier to customize.</p>
-      <p><a class="btn btn-default" href="#">View details »</a></p>
+      <h2>Simple</h2>
+      <p>Employs modern UI/UX techniques for an easy-to-use, unobtrusive, frustration-free experience.</p>
     </div>
   </div><!-- /.row -->
-
+<br>
+	<!-- Three columns of text below the carousel -->
+<div class="row">
+	<div class="col-md-5 col-md-offset-1 text-center">
+		<img class="img-circle" src="http://placehold.it/140x140">
+		<h2><span class="text-muted">for </span>Modern Developers</h2>
+		<p>Suitable for both dev-in-a-garage indies and large professional development teams.</p>
+	</div>
+	<div class="col-md-5 text-center">
+		<img class="img-circle" src="http://placehold.it/140x140">
+		<h2><span class="text-muted">for </span>Asset Artists</h2>
+		<p>Create Assets with unparalleled versatility, or revitalize already-released content and reach new users.</p>
+	</div>
+</div><!-- /.row -->
 
   <!-- START THE FEATURETTES -->
 
@@ -143,48 +144,272 @@
 
   <div class="featurette">
     <img class="featurette-image img-circle pull-right" src="http://placehold.it/512">
-    <h2 class="featurette-heading">Smithy <span class="text-muted">for Indie Game Developers.</span></h2>
-    <p class="lead">In simple terms, a responsive web design figures out what resolution of device it's being served on. Flexible grids then size correctly to fit the screen.</p>
+    <h2 class="featurette-heading">Smithy <span class="text-muted">is a force multiplier.</span></h2>
+    <p class="lead">Smithy lets you go further with what you have. Assign <a href="#">tags</a>
+										and <a href="#">connection points</a> to GameObjects, and Smithy will automatically assemble
+										new object heirarchies, either in the Editor or at runtime. Object generation can be further
+										customized with selection weighting and Material selection options, and random seeds can
+										ensure consistent end-user experiences. <br> A few hours configuring Smithy <a href="#">Adapters</a>
+										can result in content that would have taken a team of artists and designers days or
+										weeks to hand-make.</p>
   </div>
 
   <hr class="featurette-divider">
 
   <div class="featurette">
     <img class="featurette-image img-circle pull-left" src="http://placehold.it/512">
-    <h2 class="featurette-heading">Smithy <span class="text-muted">for Asset Artists and Content Creators.</span></h2>
-    <p class="lead">The new Bootstrap 3 promises to be a smaller build. The separate Bootstrap base and responsive.css files have now been merged into one. There is no more fixed grid, only fluid.</p>
+    <h2 class="featurette-heading">Smithy <span class="text-muted">is made for your project.</span></h2>
+    <p class="lead">Smithy is built around Unity's component system, and is completely content-agnostic. Games,
+										art installations, visualization tools, interactive exhibits, VR showcases - it's all good.<br>
+										If you use Unity, Smithy is compatible with your project.
   </div>
 
   <hr class="featurette-divider">
 
   <div class="featurette">
     <img class="featurette-image img-circle pull-right" src="http://placehold.it/512">
-    <h2 class="featurette-heading">Smithy <span class="text-muted">for Professional Game Development Studios.</span></h2>
-    <p class="lead">A big design trend for 2013 is "flat" design. Gone are the days of excessive gradients and shadows. Designers are producing cleaner flat designs, and Bootstrap 3 takes advantage of this minimalist trend.</p>
+    <h2 class="featurette-heading">Smithy <span class="text-muted">is easy to use.</span></h2>
+    <p class="lead">Smithy uses modern flat styling to deliver a streamlined, uncomplicated experience.
+										Configuration is a point-and-click experience, and Smithy automatically detects
+										(and repairs) most common issues and mistakes.</p>
   </div>
 
   <hr class="featurette-divider">
 
-  <div class="featurette">
+	<div class="featurette">
     <img class="featurette-image img-circle pull-left" src="http://placehold.it/512">
-    <h2 class="featurette-heading">Smithy <span class="text-muted">for Unity Asset Store Customers.</span></h2>
-    <p class="lead">A big design trend for 2013 is "flat" design. Gone are the days of excessive gradients and shadows. Designers are producing cleaner flat designs, and Bootstrap 3 takes advantage of this minimalist trend.</p>
+    <h2 class="featurette-heading">Smithy <span class="text-muted">is for modern developers.</span></h2>
+    <p class="lead">Modern development tools help developers create content with a minimum investment of time, money, and
+										frustration.<br>Smithy is no exception.<br>Flat styling, automatic error detection, and comprehensive
+										review tools make Smithy a pain-free step in your Unity workflow.</p>
   </div>
 
-  <hr class="featurette-divider">
+	<hr class="featurette-divider">
 
+	<div class="featurette">
+		<img class="featurette-image img-circle pull-right" src="http://placehold.it/512">
+		<h2 class="featurette-heading">Smithy <span class="text-muted">is for Asset artists.</span></h2>
+		<p class="lead">Smithy Design Edition includes an additional tool built for Asset artists : The Smithy Reader Exporter
+										allows artists to export Unity Assets with built-in Smithy behavior, and come packaged with a Smithy
+										read-only version. You can now use the full generative power of Smithy with your assets, even if your
+										customers don't have the Smithy.<br> Create new Assets built on Smithy procedural generation, or,
+										update previous releases with Smithy functionality for additional Asset Store sales.</p>
+	</div>
   <!-- /END THE FEATURETTES -->
+
+	<!-- DETAILS ASIDE -->
+
+	<section>
+			<div class="container-fluid details">
+					<div class="row">
+						<div class="container">
+							<div class="col-md-12" id="editions">
+									<h1 class="section-heading">Editions</h1>
+									<p class="lead section-lead">Smithy comes in a number of releases - select the one that works for your project and your budget.</p>
+									<p class="section-paragraph pull-right">Not sure? <a href="#">Click here</a> for more information about the differences between editions.</p>
+							</div>
+						</div>
+					</div>
+					<!-- /.row -->
+			</div>
+			<!-- /.container -->
+	</section>
+	<!-- /DETAILS -->
+
+
+	<!-- Get Smithy -->
+
+	<div class="row flat">
+		<div class="col-lg-3 col-md-3 col-xs-6">
+			<ul class="plan plan3">
+			<li class="plan-name">
+			Reader
+			</li>
+			<li class="plan-price">
+				<strong>$0</strong>
+				</li>
+				<li style="color: #34495e">
+				Smithy Asset Reader
+				</li>
+				<li>
+					&nbsp;
+				</li>
+				<li>
+					&nbsp;
+				</li>
+				<li>
+					&nbsp;
+				</li>
+				<li>
+					&nbsp;
+				</li>
+				<li>
+					&nbsp;
+				</li>
+				<li>
+					&nbsp;
+				</li>
+			<li class="plan-action">
+				<a href="#" class="btn btn-success btn-lg">Get Smithy Reader</a>
+			</li>
+			</ul>
+		</div>
+
+		<div class="col-lg-3 col-md-3 col-xs-6">
+		<ul class="plan plan1">
+		<li class="plan-name">
+		Standard
+		</li>
+		<li class="plan-price">
+		<strong>$50</strong>
+		</li>
+		<li>
+		Smithy Procedural Generator
+		</li>
+		<li>
+		Node Editor
+		</li>
+		<li>
+		Object Assembler
+		</li>
+		<li>
+		Tutorial and Demos (with source)
+		</li>
+		<li>
+			&nbsp;
+		</li>
+		<li>
+			&nbsp;
+		</li>
+		<li>
+			&nbsp;
+		</li>
+		<li class="plan-action">
+			<a href="#" class="btn btn-success btn-lg">Buy Smithy</a>
+		</li>
+		</ul>
+		</div>
+		<div class="col-lg-3 col-md-3 col-xs-6">
+		<ul class="plan plan2">
+		<li class="plan-name">
+		Designer
+		</li>
+		<li class="plan-price">
+			<strong>$80</strong>
+			</li>
+			<li>
+			Smithy Procedural Generator
+			</li>
+			<li>
+			Node Editor
+			</li>
+			<li>
+			Object Assembler
+			</li>
+			<li>
+			Tutorial and Demos (with source)
+			</li>
+			<li style="color: #16a085">
+			Smithy Reader Exporter
+			</li>
+			<li>
+			&nbsp;
+			</li>
+			<li>
+			&nbsp;
+			</li>
+		<li class="plan-action">
+			<a href="#" class="btn btn-success btn-lg">Buy Smithy Designer</a>
+		</li>
+		</ul>
+		</div>
+		<div class="col-lg-3 col-md-3 col-xs-6">
+		<ul class="plan plan3">
+		<li class="plan-name">
+		Pro
+		</li>
+		<li class="plan-price">
+		<strong>$135</strong>
+		</li>
+		<li>
+		Smithy Procedural Generator
+		</li>
+		<li>
+		Node Editor
+		</li>
+		<li>
+		Object Assembler
+		</li>
+		<li>
+		Tutorial and Demos (with source)
+		</li>
+		<li style="color: #16a085">
+		Smithy Reader Exporter
+		</li>
+		<li style="color: #9b59b6">
+		Runtime Editor API
+		</li>
+		<li style="color: #9b59b6">
+		Fully documented C# source
+		</li>
+
+		<li class="plan-action">
+		<a href="#" class="btn btn-success btn-lg">Buy Smithy Pro</a>
+		</li>
+		</ul>
+		</div>
+		</div>
+
+		<a class="btn-primary btn-lg pull-right" href="#" role="button"><i class="fa fa-bolt"></i>&nbsp;&nbsp; Upgrade your copy of Smithy</a>
+
+	</div>
+	<!-- /End GET -->
+
+	<section>
+			<div class="container-fluid details">
+					<div class="row">
+						<div class="container">
+							<div class="col-md-5">
+									<h1 class="section-heading">Contact</h1>
+									</div>
+
+									<div class="col-md-7 pull-right">
+										<br>
+									<a class="btn-primary btn-lg" href="#" role="button"><i class="fa fa-twitter"></i>&nbsp;&nbsp;Twitter</a>&nbsp;&nbsp;
+									<a class="btn-primary btn-lg" href="#" role="button"><i class="fa fa-cube"></i>&nbsp;&nbsp;Unity Forums</a>&nbsp;&nbsp;
+									<a class="btn-primary btn-lg" href="#" role="button"><i class="fa fa-envelope"></i>&nbsp;&nbsp;E-Mail</a>&nbsp;&nbsp;
+							</div>
+						</div>
+					</div>
+					<!-- /.row -->
+			</div>
+			<!-- /.container -->
+	</section>
+
+
 
 
   <!-- FOOTER -->
   <footer>
-    <p class="pull-right"><a href="#">Back to top</a></p>
-    <p>This Bootstrap layout is compliments of Bootply. · <a href="http://www.bootply.com/62603">Edit on Bootply.com</a></p>
+		<div class="row">
+			<div class="col-md-8 col-md-offset-2">
+    <p class="pull-right"><a href="#">Back to top</a></p> &copy; 2016 <a href="http://www.evilwizardstudios.com/">Evil Wizard Studios</a>
+	</div>
+</div>
   </footer>
-
+<a  id="contact"></a>
 </div><!-- /.container -->
-	<!-- script references -->
-		<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.2/jquery.min.js"></script>
-		<script src="js/bootstrap.min.js"></script>
+<script>$(".scroll").click(function(event){
+        event.preventDefault();
+        //calculate destination place
+        var dest=0;
+        if($(this.hash).offset().top > $(document).height()-$(window).height()){
+             dest=$(document).height()-$(window).height();
+        }else{
+             dest=$(this.hash).offset().top;
+        }
+        //go to destination
+        $('html,body').animate({scrollTop:dest - 75}, 1000,'swing');
+    });</script>
 	</body>
 </html>
