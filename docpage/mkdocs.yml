@@ -1,0 +1,23 @@
+site_name: Smithy Documentation
+site_description: Help and Documentation for the SMITHY Procedural Generation Framework Asset for Unity3D
+site_author: Evil Wizard Studios
+copyright: 2016 Evil Wizard Studios
+pages:
+- Home: 'index.md'
+- Demos and Tutorials:
+    - Quick Start: 'demos_tutorials/quick_start.md'
+    - Floating Island: 'demos_tutorials/floating_island.md'
+    - FPS Arsenal: 'demos_tutorials/fps_arsenal.md'
+    - RPG Hero: 'demos_tutorials/rpg_hero.md'
+- Editor:
+    - Adapters: 'editor/adapter.md'
+    - Nodes: 'editor/node.md'
+    - Managers: 'editor/manager.md'
+- Generation API: 'generation.md'
+- Edition-Specific:
+      - Editions Overview: 'edition_specific/editions.md'
+      - Reader : 'edition_specific/reader.md'
+      - Exporter: 'edition_specific/exporter.md'
+      - Runtime Editor: 'edition_specific/runtime_editor.md'
+- Troubleshooting: 'troubleshooting.md'
+theme: flatly
