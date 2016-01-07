@@ -57,8 +57,8 @@ Indicator | Status | Description
   The warning panel will display any issues that might affect the operation of this adapter or its nodes. It has two states:
 
    |
-  :-----: | :-----:
-<button type="button" class="btn btn-success btn-sm"><i class="fa fa-check fa-5x"></i></button> &nbsp;&nbsp;&nbsp;**Valid** |<button type="button" class="btn btn-danger btn-sm"><i class="fa fa-hashtag fa-5x"></i></button> &nbsp;&nbsp;&nbsp;**Problems Detected** *(where # is the number of issues)*
+  :-----:|:-----:
+<button type="button" class="btn btn-success btn-sm"><i class="fa fa-check fa-5x"></i></button> &nbsp;&nbsp;&nbsp;**Valid** |<button type="button" class="btn btn-danger btn-sm"><i class="fa fa-hashtag fa-5x"></i></button> &nbsp;&nbsp;&nbsp;**Problems Detected**<br>*(where # is the number of issues)*
 
 Issues that Smithy detects are arranged into three categories:
 
@@ -95,8 +95,9 @@ Alt-clicking the warning icon will open the relevant [troubleshooting](../troubl
 
   For example:
 
-  depth = 2 | depth = 3 | depth = 5
-  ---- | ---- | ----
+  | |
+  :----:|:----:|:----:
+  **depth = 2** | **depth = 3** | **depth = 5**
   ![Depth 2](../img/depth-2.png)<br>*(13 GameObjects at Width = 3)* | ![Depth 3](../img/depth-3.png)<br>*(40 GameObjects at Width = 3)* | ![Depth 5](../img/depth-5.png)<br>*(364 GameObjects at Width = 3)*
 
   <div class="panel panel-danger">
@@ -112,9 +113,16 @@ Alt-clicking the warning icon will open the relevant [troubleshooting](../troubl
   The Node Palette contains the controls to add, move, adjust, and delete nodes.
 
 #### Add Node Tab
-![Node Palette](../img/panel_add-node-palette)
+![Node Palette / Add](../img/panel_add-node-palette.png)
+
+| | |
+|:---:|:---:|:---:
+<i class="fa fa-plug fa-3x" style="color:#3498db"></i> | <i class="fa fa-plus-square fa-3x" style="color:#1abc9c"></i> | <i class="fa fa-copy fa-3x" style="color:#9b59b6"></i>
+|Add Plug| Add Socket | Clone Node
 
   From left to right, the tabs under the add node tab switch the add mode to Plug, Socket, and Clone. Moving the mouse over the object mesh in the [Scene View Window](http://docs.unity3d.com/Manual/UsingTheSceneView.html) will draw a magenta dot - this is the placement point for new nodes. Left click the mouse, and a new node of the selected node type will be at the placement point.
+
+  ![Adding a new Plug Node](../img/add_node.gif)
 
   Please note that Smithy won't allow snapping to points where nodes already exist on the same [layer](#node-layers) (you'll have to add a new layer.)
 
@@ -134,13 +142,106 @@ Clone mode clones the node that is currently selected in the Layer Panel and add
 
 #### Edit Node Tab
 
+![Node Palette / Edit](../img/panel_edit-node-palette.png)
+
+| | |
+:---:|:---:|:---:
+<i class="fa fa-hand-o-up fa-3x" style="color:#3498db"></i> | <i class="fa fa-arrows fa-3x" style="color:#3498db"></i> | <i class="fa fa-external-link-square fa-3x" style="color:#3498db"></i>
+Select Node | Move Node | Adjust Connection Angle
+
+  From left to right, the tabs under the Edit Node Tab set selection mode, move mode, and connection angle mode.
+
+---
+
+  In **selection mode**, left-clicking on a node in the Scene View Window will select that node in the inspector. The Gizmo icon will turn yellow to highlight when it's under the mouse pointer, and green when it has been selected. Nodes can also be selected by clicking the name of the node in the [Layer Panel](#layer-panel).
+
+---
+
+  **Move mode** allows repositioning of the selected node. If a node is not currently selected (highlighted green in the Scene View and layer panel), this option will be disabled.
+
+  Move mode appends a subpanel to the palette with the following icons:
+
+  ![Move Mode Subpanel](../img/panel_move-subpanel.png)
+
+  By default, move mode draws a Unity movement handle in the Scene View that can be used to drag the node around the edit area.
+
+  By clicking the <button type="button" class="btn btn-primary btn-sm"><i class="fa fa-magnet fa-lg"></i></button> toggle, the movement handles will disappear and the magenta placement point will appear when the mouse enters the Scene View. Left clicking in the scene view will set the node's position to the placement point position.
+
+  By default, a node moved in this manner will recalculate its' [Connection Angle](node/#connection-angle) (it will try to align to the new surface normal). To prevent this behavior, click the <button type="button" class="btn btn-primary btn-sm"><i class="fa fa-external-link-square fa-lg"></i></button> button, which will toggle connection angle preservation.
+
+  ---
+
+  **Adjust Connection Angle mode** draws a Unity rotation handle at the node position. This can be dragged in any axis to set the [Connection Angle](node#connection-angle) of the node. This mode will also append the following connection angle quick-set subpanel to the palette:
+
+ | | | | | | |
+ :---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|
+ <button type="button" class="btn btn-primary btn-sm"><i class="fa fa-arrow-up fa-3x"></i></button> | <button type="button" class="btn btn-primary btn-sm"><i class="fa fa-arrow-down fa-3x"></i></button> | <button type="button" class="btn btn-primary btn-sm"><i class="fa fa-arrow-left fa-3x"></i></button> | <button type="button" class="btn btn-primary btn-sm"><i class="fa fa-arrow-right fa-3x"></i></button> | <button type="button" class="btn btn-primary btn-sm"><h4>&nbsp;&nbsp;&nbsp;**F**&nbsp;&nbsp;&nbsp;</h4></button> | <button type="button" class="btn btn-primary btn-sm"><h4>&nbsp;&nbsp;&nbsp;**N**&nbsp;&nbsp;&nbsp;</h4></button> | <button type="button" class="btn btn-primary btn-sm"><h4>&nbsp;&nbsp;&nbsp;**B**&nbsp;&nbsp;&nbsp;</h4></button> | <button type="button" class="btn btn-primary btn-sm"><h4>&nbsp;&nbsp;&nbsp;**C**&nbsp;&nbsp;&nbsp;</h4></button>
+ World Up | World Down | World Left | World Right | World Forward | World Backward | Nearest Surface Normal | Align to Object Center
+
+ Clicking any of these options will directly set the node's connection angle.
+
+
 #### Delete Node Tab
+
+  Delete mode will delete the node nearest the mouse cursor when left-clicking in the scene view.
 
 #### Palette Information Panel
 
+![Palette Information Panel Example](../img/panel_palette_info.png)
+
+  For clarity's sake, there is an information box located at the bottom of the palette. This box reports the currently selected option, or set of options.
+
 ### Node Layers
 
-#### Node Layer Window
+  Nodes on an adapter are collected into layers. These layers are just an organizational tool - they don't affect generation - but can be used to edit multiple nodes at once.
+
+  All adapters have at least one layer. Smithy does not allow adapters without layers, and deleting the last layer on an adapter will replace it with a new layer. Layers without nodes are, however, valid.
+
+  The current active layer (the layer that will contain nodes added through the [Node Palette](#node-palette)) is colored <span class="label label-success">teal</span>. Inactive layers are colored <span class="label label-primary">navy</span>, and can be activated by clicking the layer name. Only one layer can be active at a time.
+
+  <div class="well"> Nodes on inactive layers will still contribute to procedural generation, layers are just an organizational tool. </div>
+
+  ![Node Layer Pill](../img/layer_pill.png)
+
+  | |
+  :---:|:---
+    <button type="button" class="btn btn-primary btn-sm">&nbsp;&nbsp;<i class="fa fa-caret-down fa-3x"></i>&nbsp;&nbsp;</button> | Expands or collapses the layer's node list
+    <button type="button" class="btn btn-success btn-sm">**Layer 0**</button> | The active layer's name.
+    <button type="button" class="btn btn-primary btn-sm">**Layer 0**</button> | An inactive layer name. Click to set as the active layer.
+   <button type="button" class="btn btn-info btn-sm"><i class="fa fa-gear fa-3x"></i></button> | Opens the [Layer Window](#layer-window)
+   <button type="button" class="btn btn-primary btn-sm" style="background-color:#27ae60;border-color:#27ae60;"><i class="fa fa-sort-amount-asc fa-3x"></i></button> | Reverses the ordering of the layer's node list.
+   <button type="button" class="btn btn-primary btn-sm" style="background-color:#27ae60;border-color:#27ae60;"><i class="fa fa-reorder fa-3x"></i></button> | Sort nodes. Nodes can be sorted by [type](node#node-type), [name](node#name), [tags](node#tags), [selection probability](node#selection-probability), [position](node#position) (x, y, or z), or by visibility.
+   <button type="button" class="btn btn-primary btn-sm" style="background-color:#9b59b6;border-color:#9b59b6;"><i class="fa fa-eye fa-3x"></i></button> | Toggle visibility for all nodes in the layer. Invisible nodes will still contribute to generation.
+   <button type="button" class="btn btn-danger btn-sm"><i class="fa fa-trash fa-3x"></i></button> | Delete the layer and all nodes it contains.
+
+   New layers can be added by clicking the <button type="button" class="btn btn-primary btn-sm"><i class="fa fa-clone fa-lg"></i></button> button below the layers panel.
+
+#### Layer Window
+
+![Layer Window](../img/window_layer.png)
+
+  The layer window allows several of the [Node Window](node/#node-window) controls to be applied to multiple nodes at once.
+
+  The left column is the node selection set. This is a list of all nodes on the layer, by type and name. The bottom of this column contains buttons for selecting/deselecting all plugs, selecting/deselecting all sockets, and selecting/deselecting all nodes.
+
+  ---
+
+  The right-hand column contains the following five controls:
+
+  <div class="well"> The functions of these controls are identical to the controls in the [Node Settings Window](node#node-settings-window). More information about each control is available on that page. </div> 
+
+
+  | |
+  :---:|:---
+  <button type="button" class="btn btn-warning btn-sm"><i class="fa fa-external-link-square fa-3x"></i></button> | Contains the same set of connection angle quick-set buttons as in the Adjust Connection Angle Mode of the [Node Palette](#node-palette). These buttons function identically to the palette set, and when clicked, the connection angles of all selected nodes  will be changed.
+  <button type="button" class="btn btn-info btn-sm"><i class="fa fa-pie-chart fa-3x"></i></button> | Clicking a [Preset](manager/#probabilty-preset-manager) will apply values to that preset to all selected nodes.
+  <button type="button" class="btn btn-info btn-sm"><i class="fa fa-tags fa-3x"></i></button> | This is the same [Tag Manager](node#tag-manager) as in the [Node Settings Window](node#node-settings-window), but changes here will be applied to all nodes in selection. Tags that appear in multiple nodes will be marked with a number corresponding to the number of nodes selected that contain the tag.
+  <button type="button" class="btn btn-info btn-sm" style="background-color:#8e44ad;border-color:#8e44ad;"><i class="fa fa-bullseye fa-3x"></i></button> | Like the [Node Settings Window](node#node-settings-window), but applies the entered [jitter values](node#generation-jitter) to each node in the selection.
+  <button type="button" class="btn btn-info btn-sm" style="background-color:#27ae60;border-color:#27ae60;"><i class="fa fa-paint-brush fa-3x"></i></button> | [Material Options](node#material-options) added here will be copied to all nodes in the selection
+
+
+
+  These controls operate over every node currently selected in the left hand panel. After a successful operation, a notification box will appear in the window for a few seconds.
 
 ---
 

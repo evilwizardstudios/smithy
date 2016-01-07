@@ -4,6 +4,10 @@
 
 #### Sockets
 
+## Tags
+
+## Generation Probability
+
 # Node Editor Panel
 
 ## Adding Nodes
@@ -26,13 +30,15 @@
 
 # Node Settings Window
 
+## Name
+
 ## Position
 
 ## Connection Angle
 
 ### Connection Angle Snap Options
 
-## Tags
+## Tag Manager
 
 ## Probability Settings
 
