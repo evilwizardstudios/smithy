@@ -21,8 +21,8 @@ Generator myGenerator = new Generator();
 
 This will instantiate a new Generator object with an unseeded Random provider, and will create a plug reference collection of **all** Smithy-enabled objects in the *Resources* folder. These properties can be changed by supplying the following parameters:
 
-## Parameters
-### Random Seed
+# Parameters
+## Random Seed
   Generators can be provided with an ```int``` value as a [random seed](https://en.wikipedia.org/wiki/Random_seed). Generators that share the same seed and operating with the same inputs will generate consistent results every time.
 
 ```
@@ -34,7 +34,7 @@ var myGenerator = new Generator(mySeedValue);
 
   A seed value of 0 will result in an unseeded Random generator.
 
-### Resource Paths
+## Resource Paths
   By default, Generators reference every Smithy-enabled object in a project's *Resources* folder. However, Generators can also be passed an ```IEnumerable<string>``` collection. These strings are paths relative to the *Resources* folder of your Unity project, and will limit the plug reference collection the Generator is able to create:
 
 ```
@@ -44,19 +44,19 @@ var myGenerator = new Generator(resourcePaths);
 
 In the example above, the Generator will **only** look for [<i class="fa fa-plug"></i><b>Plug Nodes</b>](./editor/node#plugs)  from the *Resources/Level1/A*, *Resources/Level1/B*, and *Resources/Level1/C* folders. This is useful in limiting the scope of objects that can be generated, as well as increasing generation performance.
 
-### Generation Options
+## Generation Options
   Generators can be passed an array of ```GenerationOption[]```, that modify the Generator's behavior. These options will affect every ```Generate``` call the Generator makes. These same options can be passed on a [per-call basis](#generate).
 
-#### GenerationOptions.DisableJitter
+### GenerationOptions.DisableJitter
   Prevent Node [jitter](./editor/node#generation-jitter) from being applied on instantiation.
 
-#### GenerationOptions.DisableMaterialSelection
+### GenerationOptions.DisableMaterialSelection
   Prevent Node [material selection](./editor/node#material-options) from being applied on instantiation. All Plug objects will instantiate with their default materials.
 
-#### GenerationOptions.ForceFillSockets
+### GenerationOptions.ForceFillSockets
   Ignore Socket [Fill Probability](./editor/node#socket-probability). All sockets in the hierarchy will be filled with Plugs.
 
-#### GenerationOptions.IgnoreSelectionWeight
+### GenerationOptions.IgnoreSelectionWeight
   Ignore Plug [Selection Weight](./editor/node#plug-weight). All plugs will have an equal possibility of selection.
 
   <div class="panel panel-default">
@@ -65,8 +65,8 @@ In the example above, the Generator will **only** look for [<i class="fa fa-plug
     </div>
   </div>
 
-## Methods
-### Generate
+# Methods
+## Generate
 ---
 ```
 public GameObject Generate(GameObject baseGameObject)
@@ -90,7 +90,7 @@ Keep in mind that in most projects, creating a new generator *for each* ```Gener
 
 Additionally, ```Generate``` can be passed an array of ```GenerationOption[]``` that operates in the same way the [Generator instantiation parameter does](#generation-options), but only over the single ```Generate``` call.
 
-### Include
+## Include
 ---
 ```
 public void Include(IEnumerable<GameObject> includedAssets)
@@ -105,13 +105,8 @@ var myGenerator = new Generator("/Foo");
 
 myGenerator.Include(morePlugs);
 ```
-#### Asset Bundles
-<br>
-  <div class="panel panel-info">
-    <div class="panel-heading">
-      <h3 class="panel-title">AssetBundles</h3>
-    </div>
-    <div class="panel-body">
+### Asset Bundles
+
 AssetBundle Assets can be added to Generator selection sets by first loading the AssetBundle content then using ```Include``` to add it to the Generator. As Generators can't be created from AssetBundles, this is currently the only way to generate from bundled content.
 
 To build a Generator that selects from **only** AssetBundle Assets, first create a new Generator with a Resource Path parameter that leads to an empty *Resource* folder. Then, ```Include``` the loaded AssetBundle content, like so:
@@ -123,10 +118,9 @@ var myLoadedAssets = myLoadedAssetBundle.LoadAllAssets<GameObject>;
 var myGenerator = new Generator("/EmptyFolder");
 myGenerator.Include(myLoadedAssets);
 ```
-</div>
-  </div>
 
-### Exclude
+
+## Exclude
 ---
 ```
 public void Exclude(IEnumerable<GameObject> excludedAssets)
@@ -143,7 +137,7 @@ myGenerator.Exclude(oldPlugs);
 
   ``Exclude`` is best used when managing Generators that operate over large reference collections, or very specific ones (such as selection sets based on achievements or player progress). Use ```Exclude``` when it would be overly difficult, performance-intensive, or time-consuming to instantiate a new Generator with the appropriate Plug reference collection.
 
-### Set Depth
+## Set Depth
 ---
 ```
 public void SetDepth(int depth)

@@ -1,4 +1,6 @@
 # Overview
+  
+## Type
 
 #### Plugs
 
@@ -8,7 +10,7 @@
 
 ## Generation Probability
 
-# Node Editor Panel
+# Node Editor Pill
 
 ## Adding Nodes
 
@@ -44,7 +46,7 @@
 
 ### Plug Weight
 
-### Socket
+### Socket Fill Probability
 
 ### Presets
 

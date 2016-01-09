@@ -49,11 +49,11 @@ Indicator | Status | Description
 
 ---
 
-## Information Panel
+# Information Panel
 ![Information Panel](./img/panel_info.png)
   The information panel is the first navigation panel option and provides an at-a-glance display of all critical Node information. The information panel is comprised of a warning panel, a generation depth counter, and a tag list panel.  
 
-### Warning Panel
+## Warning Panel
   The warning panel will display any issues that might affect the operation of this adapter or its nodes. It has two states:
 
    |
@@ -69,10 +69,10 @@ These will not cause problems with generation, but may potentially produce undes
 
 Alt-clicking the warning icon will open the relevant [troubleshooting](../troubleshooting) link in a new browser window.
 
-### Generation Depth Panel
+## Generation Depth Panel
   Displays the [maximum generation depth](#generation-depth) for this adapter.
 
-### Tag List Panel
+## Tag List Panel
   Displays a list of all Tags present on the Adapter's nodes. Tags present on Plugs will be shown in <span class="label label-info">blue</span>, and Tags present on Sockets will be shown in <span class="label label-success">teal</span>.
 
   Clicking a tag will open the Tag Search popup window:
@@ -81,7 +81,7 @@ Alt-clicking the warning icon will open the relevant [troubleshooting](../troubl
 
 ---
 
-## Node Editor Panel
+# Node Editor Panel
 ![Inspector Node Editor Panel](./img/inspector_node-editor.png)
 
   The node editor panel is used for adding, editing, and deleting Plug and Socket nodes. It consists of the Generation Depth Panel, Node Palette, and Layer Panel.
@@ -216,6 +216,8 @@ Select Node | Move Node | Adjust Connection Angle
 
    New layers can be added by clicking the <button type="button" class="btn btn-primary btn-sm"><i class="fa fa-clone fa-lg"></i></button> button below the layers panel.
 
+   The nodes in each layer contain their own control pills, which are explained in the [Node Editor Pills](node#node-editor-pill) section of the documentation on nodes.
+
 #### Layer Window
 
 ![Layer Window](../img/window_layer.png)
@@ -228,7 +230,7 @@ Select Node | Move Node | Adjust Connection Angle
 
   The right-hand column contains the following five controls:
 
-  <div class="well"> The functions of these controls are identical to the controls in the [Node Settings Window](node#node-settings-window). More information about each control is available on that page. </div> 
+  <div class="well"> The functions of these controls are identical to the controls in the [Node Settings Window](node#node-settings-window). More information about each control is available on that page. </div>
 
 
   | |
@@ -240,19 +242,67 @@ Select Node | Move Node | Adjust Connection Angle
   <button type="button" class="btn btn-info btn-sm" style="background-color:#27ae60;border-color:#27ae60;"><i class="fa fa-paint-brush fa-3x"></i></button> | [Material Options](node#material-options) added here will be copied to all nodes in the selection
 
 
-
   These controls operate over every node currently selected in the left hand panel. After a successful operation, a notification box will appear in the window for a few seconds.
 
 ---
 
 ## Object Assembler Panel
+![Object Assembler Panel](../img/panel_object-assembler.png)
+
+  The Object Assembler panel is a quick way to manually build object hierarchies and test generation in the Editor.
 
 ### Socket View Panel
+  The socket view panel is similar to the [Node Layer Panel](#node-layers), but only displays the sockets on the adapter. Slightly different from the [Node Editor Node Pills](node#node-editor-pill), each socket pill contains the following options:
 
-### Plug Selector
+  | |
+  :---:|:---
+  <button type="button" class="btn btn-warning btn-sm"><i class="fa fa-plus-square fa-3x"></i></button> | Change the [Node Type](node#type) of the node. Sockets changed to plugs will be removed from the Object Assembler Socket View
+  <button type="button" class="btn btn-warning btn-sm">**Node Name**</button> | Click to select the Node
+  <button type="button" class="btn btn-primary btn-sm"><i class="fa fa-gear fa-3x"></i></button> | Open the [Node Settings Window](node#node-settings-window)
+  <button type="button" class="btn btn-primary btn-sm" style="background-color:#8e44ad;border-color:#8e44ad;"><i class="fa fa-random fa-3x"></i></button> | Generate a plug object for this node (ignores [socket fill probability](node#socket-fill-probability))
+  <button type="button" class="btn btn-primary btn-sm" style="background-color:#8e44ad;border-color:#8e44ad;"><i class="fa fa-eraser fa-3x"></i></button> | Destroy the child plug of this socket, if it exists.
+  <button type="button" class="btn btn-info btn-sm"><i class="fa fa-crosshairs fa-3x"></i></button> | Displays the name of the current child plug for this node, if it exists. Clicking on this icon will open the [Plug Selector Window](#plug-selector)
+  <button type="button" class="btn btn-primary btn-sm" style="background-color:#27ae60;border-color:#27ae60;"><i class="fa fa-clone fa-3x"></i></button> | Change the socket's [Node Layer](#node-layers)
+  <button type="button" class="btn btn-primary btn-sm" style="background-color:#27ae60;border-color:#27ae60;">&nbsp;&nbsp;<i class="fa fa-sort fa-3x"></i>&nbsp;&nbsp;</button> | Change the order of the socket in its layer
+  <button type="button" class="btn btn-primary btn-sm" style="background-color:#8e44ad;border-color:#8e44ad;"><i class="fa fa-eye fa-3x"></i></button> | Toggle the visibility of the socket
+  <button type="button" class="btn btn-danger btn-sm"><i class="fa fa-trash fa-3x"></i></button> | Delete the socket
 
-### Generating in Editor Mode
+# Plug Selector
+![Plug Selection Window](/img/window_plug-selection.png)
+
+  Clicking the <button type="button" class="btn btn-info btn-sm"><i class="fa fa-crosshairs fa-lg"></i></button> button of a socket pill will open the Plug Selector Window, which will show all adapter-enabled prefabs that are valid as plug objects for this socket.
+
+  Clicking one of these objects will instantiate a copy as a plug object for the current socket.
+
+<div class="well">
+  If the selected plug object contains multiple plug nodes that are valid for the current socket, a sub-window will ask you to select which node will act as the connection point.
+</div>
+
+  ---
+
+  By default, the plug selector window will only display plug objects that share one or more [tags](node#tags) with the current socket. Clicking one of these tags will bring up the [tag search popup](#tag-list-panel).
+
+  Clicking the <button type="button" class="btn btn-info btn-sm"><i class="fa fa-lock fa-lg"></i></button> button to toggle the tag override mode. While tag override is on, **any** plug can be set to the current socket, regardless of tags.
+
+## Generating in Editor Mode
+
+  The Object Assembler will also let you procedurally generate objects in the editor. At the bottom of the socket view panel, there are four buttons. From left to right:
+
+  | | |
+  :---:|:---:|:---
+  <button type="button" class="btn btn-primary btn-sm"><i class="fa fa-bullseye fa-3x"></i></button> | Set Generator Seed | Toggle to activate the [generation seed](#generation-seed)
+  <button type="button" class="btn btn-primary btn-sm">&nbsp;&nbsp;<i class="fa fa-flash fa-3x"></i>&nbsp;&nbsp;</button> | Run Generator | Procedurally generate an object hierarchy, using a [generator](../generation) (respects [socket fill probability settings](node#socket-fill-probability))
+  <button type="button" class="btn btn-warning btn-sm" style="background-color:#8e44ad;border-color:#8e44ad;"><i class="fa fa-random fa-3x" ></i></button> | Fill All Sockets | Generates a plug for every available socket (ignores [socket fill probability settings](node#socket-fill-probability))
+  <button type="button" class="btn btn-danger btn-sm"><i class="fa fa-eraser fa-3x"></i></button> | Clear All Sockets| Clear all sockets, destroy all plug objects, and reset the object hierarchy.
 
 #### Generation Seed
+  All Smithy [generators](#../generation#random-seed) can take a an ```int``` value as a [random seed](https://en.wikipedia.org/wiki/Random_seed). Generations with a random seed with always produce the same output given the same inputs. Because Editor and runtime generators operate identically, seeds found in the object assembler and passed to runtime generators will generate the same output.
+
+  However, new inputs like more or fewer available plugs will "break" known seeds. That is, the same seed operating over two distinct selection sets will not produce identical results. If seed values are an important part of your project, it's best to only set seeds once all assets and adapters are locked in.
 
 #### Save As Fixed Object
+  The object assembler can also save out object hierarchies stripped of all Smithy interfaces ("fixed"). Clicking the <button type="button" class="btn btn-primary btn-sm"><i class="fa fa-save fa-lg"></i></button> at the bottom of the object assembler panel will save a modified copy of the object heirarchy as a prefab.
+
+  The prefab will not include any Smithy adapters or nodes, but it will still have the same GameObject parent/child relationships.
+
+  This is useful if your project can make use of Smithy's rapid assembly functions, but has no real need for runtime procedural generation.
