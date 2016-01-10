@@ -1,7 +1,17 @@
 # Overview
 
-## Smithy Manager
+# Smithy Manager
 
-## Probability Preset Manager
+## Object Browser
 
-## Tag Manager
+## Diagnose and Repair
+
+## Generate Report
+
+# Probability Preset Manager
+
+## Presets
+
+### Weight
+
+### Percentage

@@ -149,7 +149,7 @@ Clone mode clones the node that is currently selected in the Layer Panel and add
 <i class="fa fa-hand-o-up fa-3x" style="color:#3498db"></i> | <i class="fa fa-arrows fa-3x" style="color:#3498db"></i> | <i class="fa fa-external-link-square fa-3x" style="color:#3498db"></i>
 Select Node | Move Node | Adjust Connection Angle
 
-  From left to right, the tabs under the Edit Node Tab set selection mode, move mode, and connection angle mode.
+  From left to right, the tabs under the Edit Node Tab set selection mode, move mode, and connection vector mode.
 
 ---
 
@@ -167,18 +167,18 @@ Select Node | Move Node | Adjust Connection Angle
 
   By clicking the <button type="button" class="btn btn-primary btn-sm"><i class="fa fa-magnet fa-lg"></i></button> toggle, the movement handles will disappear and the magenta placement point will appear when the mouse enters the Scene View. Left clicking in the scene view will set the node's position to the placement point position.
 
-  By default, a node moved in this manner will recalculate its' [Connection Angle](node/#connection-angle) (it will try to align to the new surface normal). To prevent this behavior, click the <button type="button" class="btn btn-primary btn-sm"><i class="fa fa-external-link-square fa-lg"></i></button> button, which will toggle connection angle preservation.
+  By default, a node moved in this manner will recalculate its' [Connection Angle](node/#connection-angle) (it will try to align to the new surface normal). To prevent this behavior, click the <button type="button" class="btn btn-primary btn-sm"><i class="fa fa-external-link-square fa-lg"></i></button> button, which will toggle connection vector preservation.
 
   ---
 
-  **Adjust Connection Angle mode** draws a Unity rotation handle at the node position. This can be dragged in any axis to set the [Connection Angle](node#connection-angle) of the node. This mode will also append the following connection angle quick-set subpanel to the palette:
+  **Adjust Connection Angle mode** draws a Unity rotation handle at the node position. This can be dragged in any axis to set the [Connection Angle](node#connection-angle) of the node. This mode will also append the following connection vector quick-set subpanel to the palette:
 
  | | | | | | |
  :---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|
  <button type="button" class="btn btn-primary btn-sm"><i class="fa fa-arrow-up fa-3x"></i></button> | <button type="button" class="btn btn-primary btn-sm"><i class="fa fa-arrow-down fa-3x"></i></button> | <button type="button" class="btn btn-primary btn-sm"><i class="fa fa-arrow-left fa-3x"></i></button> | <button type="button" class="btn btn-primary btn-sm"><i class="fa fa-arrow-right fa-3x"></i></button> | <button type="button" class="btn btn-primary btn-sm"><h4>&nbsp;&nbsp;&nbsp;**F**&nbsp;&nbsp;&nbsp;</h4></button> | <button type="button" class="btn btn-primary btn-sm"><h4>&nbsp;&nbsp;&nbsp;**N**&nbsp;&nbsp;&nbsp;</h4></button> | <button type="button" class="btn btn-primary btn-sm"><h4>&nbsp;&nbsp;&nbsp;**B**&nbsp;&nbsp;&nbsp;</h4></button> | <button type="button" class="btn btn-primary btn-sm"><h4>&nbsp;&nbsp;&nbsp;**C**&nbsp;&nbsp;&nbsp;</h4></button>
  World Up | World Down | World Left | World Right | World Forward | World Backward | Nearest Surface Normal | Align to Object Center
 
- Clicking any of these options will directly set the node's connection angle.
+ Clicking any of these options will directly set the node's connection vector.
 
 
 #### Delete Node Tab
@@ -235,7 +235,7 @@ Select Node | Move Node | Adjust Connection Angle
 
   | |
   :---:|:---
-  <button type="button" class="btn btn-warning btn-sm"><i class="fa fa-external-link-square fa-3x"></i></button> | Contains the same set of connection angle quick-set buttons as in the Adjust Connection Angle Mode of the [Node Palette](#node-palette). These buttons function identically to the palette set, and when clicked, the connection angles of all selected nodes  will be changed.
+  <button type="button" class="btn btn-warning btn-sm"><i class="fa fa-external-link-square fa-3x"></i></button> | Contains the same set of connection vector quick-set buttons as in the Adjust Connection Angle Mode of the [Node Palette](#node-palette). These buttons function identically to the palette set, and when clicked, the connection vectors of all selected nodes  will be changed.
   <button type="button" class="btn btn-info btn-sm"><i class="fa fa-pie-chart fa-3x"></i></button> | Clicking a [Preset](manager/#probabilty-preset-manager) will apply values to that preset to all selected nodes.
   <button type="button" class="btn btn-info btn-sm"><i class="fa fa-tags fa-3x"></i></button> | This is the same [Tag Manager](node#tag-manager) as in the [Node Settings Window](node#node-settings-window), but changes here will be applied to all nodes in selection. Tags that appear in multiple nodes will be marked with a number corresponding to the number of nodes selected that contain the tag.
   <button type="button" class="btn btn-info btn-sm" style="background-color:#8e44ad;border-color:#8e44ad;"><i class="fa fa-bullseye fa-3x"></i></button> | Like the [Node Settings Window](node#node-settings-window), but applies the entered [jitter values](node#generation-jitter) to each node in the selection.
@@ -243,6 +243,23 @@ Select Node | Move Node | Adjust Connection Angle
 
 
   These controls operate over every node currently selected in the left hand panel. After a successful operation, a notification box will appear in the window for a few seconds.
+
+
+# Node Pills
+
+  When a [Node Layer](#node-layers) is expanded, it will show a list of all nodes that exist on that layer. Each node is represented by a pill menu that offers the following controls:
+
+| |
+:---:|:---
+<button type="button" class="btn btn-success btn-sm"><i class="fa fa-plus-square fa-3x"></i></button>  <button type="button" class="btn btn-info btn-sm"><i class="fa fa-plug fa-3x"></i></button> | Change the [Node Type](node#type) of the node.
+<button type="button" class="btn btn-success btn-sm">**Node Name**</button> | Click to select the Node
+<button type="button" class="btn btn-primary btn-sm"><i class="fa fa-gear fa-3x"></i></button> | Open the [Node Settings Window](node#node-settings-window)
+<button type="button" class="btn btn-info btn-sm"><i class="fa fa-tag fa-3x"></i></button> | Reports the number of tags on the node. Clicking will open the node's [tag manager](node#tag-manager)
+<button type="button" class="btn btn-info btn-sm"><i class="fa fa-pie-chart fa-3x"></i></button> | Reports the [socket fill probability](node#socket-fill-probability) or [plug selection weight](node#plug-weight) of the node. Click to open the node's [probability settings window](node#probaility-settings)
+<button type="button" class="btn btn-primary btn-sm" style="background-color:#27ae60;border-color:#27ae60;"><i class="fa fa-clone fa-3x"></i></button> | Change the node's [Layer](#node-layers)
+<button type="button" class="btn btn-primary btn-sm" style="background-color:#27ae60;border-color:#27ae60;">&nbsp;&nbsp;<i class="fa fa-sort fa-3x"></i>&nbsp;&nbsp;</button> | Change the order of the node in its layer (overrides sorting options)
+<button type="button" class="btn btn-primary btn-sm" style="background-color:#8e44ad;border-color:#8e44ad;"><i class="fa fa-eye fa-3x"></i></button> | Toggle the visibility of the node
+<button type="button" class="btn btn-danger btn-sm"><i class="fa fa-trash fa-3x"></i></button> | Delete the node
 
 ---
 
@@ -252,7 +269,7 @@ Select Node | Move Node | Adjust Connection Angle
   The Object Assembler panel is a quick way to manually build object hierarchies and test generation in the Editor.
 
 ### Socket View Panel
-  The socket view panel is similar to the [Node Layer Panel](#node-layers), but only displays the sockets on the adapter. Slightly different from the [Node Editor Node Pills](node#node-editor-pill), each socket pill contains the following options:
+  The socket view panel is similar to the [Node Layer Panel](#node-layers), but only displays the sockets on the adapter. Slightly different from the [Node Editor Node Pills](node-pills), each socket pill contains the following options:
 
   | |
   :---:|:---
