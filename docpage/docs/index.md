@@ -1,6 +1,6 @@
 # Welcome
 
-  Current version: *ALPHA 0.1.2*, NYR
+  Current version: *ALPHA 0.2.3*, NYR
 
 ##Foreward
   I would like to extend my sincere thanks for purchasing the Smithy Procedural Asset Framework.
