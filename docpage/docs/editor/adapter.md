@@ -167,6 +167,8 @@ Select Node | Move Node | Adjust Connection Angle
 
   By clicking the <button type="button" class="btn btn-primary btn-sm"><i class="fa fa-magnet fa-lg"></i></button> toggle, the movement handles will disappear and the magenta placement point will appear when the mouse enters the Scene View. Left clicking in the scene view will set the node's position to the placement point position.
 
+  <a id="connection-angle-snap"></a>
+
   By default, a node moved in this manner will recalculate its' [Connection Angle](node/#connection-angle) (it will try to align to the new surface normal). To prevent this behavior, click the <button type="button" class="btn btn-primary btn-sm"><i class="fa fa-external-link-square fa-lg"></i></button> button, which will toggle connection vector preservation.
 
   ---
@@ -214,7 +216,7 @@ Select Node | Move Node | Adjust Connection Angle
    <button type="button" class="btn btn-primary btn-sm" style="background-color:#9b59b6;border-color:#9b59b6;"><i class="fa fa-eye fa-3x"></i></button> | Toggle visibility for all nodes in the layer. Invisible nodes will still contribute to generation.
    <button type="button" class="btn btn-danger btn-sm"><i class="fa fa-trash fa-3x"></i></button> | Delete the layer and all nodes it contains.
 
-   New layers can be added by clicking the <button type="button" class="btn btn-primary btn-sm"><i class="fa fa-clone fa-lg"></i></button> button below the layers panel.
+   New layers can be added by clicking the <button type="button" class="btn btn-primary btn-sm"><i class="fa fa-clone fa-lg">+</i></button> button below the layers panel.
 
    The nodes in each layer contain their own control pills, which are explained in the [Node Editor Pills](node#node-editor-pill) section of the documentation on nodes.
 
@@ -245,13 +247,13 @@ Select Node | Move Node | Adjust Connection Angle
   These controls operate over every node currently selected in the left hand panel. After a successful operation, a notification box will appear in the window for a few seconds.
 
 
-# Node Pills
+## Node Pills
 
   When a [Node Layer](#node-layers) is expanded, it will show a list of all nodes that exist on that layer. Each node is represented by a pill menu that offers the following controls:
 
 | |
 :---:|:---
-<button type="button" class="btn btn-success btn-sm"><i class="fa fa-plus-square fa-3x"></i></button>  <button type="button" class="btn btn-info btn-sm"><i class="fa fa-plug fa-3x"></i></button> | Change the [Node Type](node#type) of the node.
+<button type="button" class="btn btn-success btn-sm">&nbsp;<i class="fa fa-plus-square fa-3x"></i>&nbsp;</button><button type="button" class="btn btn-info btn-sm"><i class="fa fa-plug fa-3x"></i></button> | Change the [Node Type](node#type) of the node.
 <button type="button" class="btn btn-success btn-sm">**Node Name**</button> | Click to select the Node
 <button type="button" class="btn btn-primary btn-sm"><i class="fa fa-gear fa-3x"></i></button> | Open the [Node Settings Window](node#node-settings-window)
 <button type="button" class="btn btn-info btn-sm"><i class="fa fa-tag fa-3x"></i></button> | Reports the number of tags on the node. Clicking will open the node's [tag manager](node#tag-manager)
@@ -263,7 +265,7 @@ Select Node | Move Node | Adjust Connection Angle
 
 ---
 
-## Object Assembler Panel
+# Object Assembler Panel
 ![Object Assembler Panel](../img/panel_object-assembler.png)
 
   The Object Assembler panel is a quick way to manually build object hierarchies and test generation in the Editor.
@@ -284,7 +286,7 @@ Select Node | Move Node | Adjust Connection Angle
   <button type="button" class="btn btn-primary btn-sm" style="background-color:#8e44ad;border-color:#8e44ad;"><i class="fa fa-eye fa-3x"></i></button> | Toggle the visibility of the socket
   <button type="button" class="btn btn-danger btn-sm"><i class="fa fa-trash fa-3x"></i></button> | Delete the socket
 
-# Plug Selector
+## Plug Selector
 ![Plug Selection Window](/img/window_plug-selection.png)
 
   Clicking the <button type="button" class="btn btn-info btn-sm"><i class="fa fa-crosshairs fa-lg"></i></button> button of a socket pill will open the Plug Selector Window, which will show all adapter-enabled prefabs that are valid as plug objects for this socket.

@@ -20,4 +20,4 @@ pages:
       - Exporter: 'edition_specific/exporter.md'
       - Runtime Editor: 'edition_specific/runtime_editor.md'
 - Troubleshooting: 'troubleshooting.md'
-theme: flatly
+theme_dir: theme
