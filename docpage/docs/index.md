@@ -1,6 +1,6 @@
 # Welcome
 
-  Current version: *ALPHA 0.2.3*, NYR
+  Current version: *BETA 0.9.0*, NYR
 
 ##Foreward
   I would like to extend my sincere thanks for purchasing the Smithy Procedural Asset Framework.
@@ -48,7 +48,7 @@
 ## Demos and Tutorials
 
 - To get started quickly, try the [Quick-Start Guide](/demos_tutorials/quick_start)
-- The [Floating Island Demo](/demos_tutorials/floating_island) will teach you how to generate complex scenery that looks hand-made, using only a few meshes and textures. The tutorial focuses on how to prepare assets and Smithy Adapters, and how to use [jitter](/editor/node/#generation-jitter) and [Material options](/editor/node/material-options) for maximum effect.
+- The [Strategy Game Tile Demo](/demos_tutorials/swamp_tile) will teach you how to generate complex scenery that looks hand-made, using only a few meshes and textures. The tutorial focuses on how to prepare assets and Smithy Adapters, and how to use [jitter](/editor/node/#generation-jitter) and [Material options](/editor/node/material-options) for maximum effect.
 - The [FPS Arsenal Demo](/demos_tutorials/fps_arsenal) will teach you how to use Smithy and your own component scripts to create a [Borderlands](http://borderlandsthegame.com/)-style procedural gun generator for an FPS game. The tutorial focuses on how to design and implement custom component scripts so Smithy produces output that has the values and behavior you want.
 - The [RPG Hero](/demos_tutorials/rpg_hero) example will teach you how to use Smithy in a more abstract way, and create 2D RPG characters with stats and fluff, as well as procedurally generated dialogue and quests. The tutorial focuses on using Smithy on GameObjects without meshes, and how to combine Smithy with other procedural generation techniques to give even more depth to procedurally created assets.
 
@@ -57,7 +57,7 @@
 </div>  
 
 # Installation and Setup
-  The Smithy Asset package can be downloaded from the [Unity Asset Store](#) and, from there, imported into an existing project. The package contains two folders of content, Smithy and Gizmos. Both are **required**.
+  The Smithy Asset package can be downloaded from the [Unity Asset Store](#) and, from there, imported into an existing project. All files included in the package are required. Demo assets and examples can be downloaded from individual tutorial pages in this site.
 
   Smithy requires no additional setup, and you can immediately begin adding [Adapters](editor/adapter) and [Nodes](editor/node). However, if it's your first time using Smithy, reading the [Quick Start Tutorial](/demos_tutorials/quick_start) is strongly recommended.
 

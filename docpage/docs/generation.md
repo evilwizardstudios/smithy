@@ -86,6 +86,18 @@ public GameObject Generate(GameObject baseGameObject, GenerationOptions[] option
   var myProceduralObject = myGenerator.Generate(myGameObject);
 ```
 
+  If the ```GameObject``` exists in the hierarchy, the Generator will not instantiate a new copy. Plugs will be generated for the extant copy.
+```
+public GameObject activeBaseObject;
+
+void Start()
+{
+  var myGenerator = new Generator();
+
+  myGenerator.Generate(activeBaseObject);     //This will still return a reference to "activeBaseObject".
+}
+```
+
 Keep in mind that in most projects, creating a new generator *for each* ```Generate``` call is performance expensive, and is almost always unnecessary.
 
 Additionally, ```Generate``` can be passed an array of ```GenerationOption[]``` that operates in the same way the [Generator instantiation parameter does](#generation-options), but only over the single ```Generate``` call.

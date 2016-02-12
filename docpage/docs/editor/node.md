@@ -90,6 +90,14 @@ You can have as many sockets as you want on a GameObject, but each socket can on
 
   Changing the values here will move the node position in world space relative to the Transform origin.
 
+## Rotation
+
+  To-do.
+
+## Scale
+
+  To-do.
+
 ## Connection Vector
 
   The connection vector is the vector of attachment between plugs and sockets. [Generated](#../generation) plug objects will be oriented so that their connection vectors (in world space) are inverse vectors.
@@ -141,13 +149,13 @@ Clicking any of these options will directly set the node's connection vector.
 
   Jitter can be disabled during [generator instantiation](../generation#parameters).
 
-### Position
+### Position Jitter
   How far the generated object can deviate from the node position. Uniform scaling adds the same value to all axes, while individual scaling can generate different values for each axis.
 
-### Rotation
+### Rotation Jitter
   How far the generated object can deviate from the its default transform rotation. This is applied **after** the [connection vectors](#connection-vectors) are aligned after instantiation. Uniform scaling adds the same value to all axes, while individual scaling can generate different values for each axis.
 
-### Size
+### Size Jitter
   How far the generated object can deviate from its default scale. This is applied **after** scaling based on the parent object's scale. Uniform scaling scales the object by a percentage, whereas individual scaling applies a scale modifier per axis.
 
 ## Material Options

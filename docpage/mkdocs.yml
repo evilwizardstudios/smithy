@@ -6,7 +6,7 @@ pages:
 - Home: 'index.md'
 - Demos and Tutorials:
     - Quick Start: 'demos_tutorials/quick_start.md'
-    - Floating Island: 'demos_tutorials/floating_island.md'
+    - Strategy Game Tile: 'demos_tutorials/swamp_tile.md'
     - FPS Arsenal: 'demos_tutorials/fps_arsenal.md'
     - RPG Hero: 'demos_tutorials/rpg_hero.md'
 - Editor:
