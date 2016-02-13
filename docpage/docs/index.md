@@ -19,8 +19,6 @@
 ## Using this Site
   Nearly every control in the Smithy editor links back to this site. If at any time in the Unity editor you need more information, hold  <span class="label label-default">ALT</span> and hover over an element. If it becomes highlighted (the cursor will also turn into a link pointer) click it, and a browser window will be opened to the relevant help page.
 
-  ![Help Mode Activated](./img/help.gif)
-
   Otherwise, the site navigation is located at the top of the window, and in-page navigation is on the left-hand side of every page. [Teal](#using-this-site) links can will lead you to further information about the topic.
 
 # Overview
@@ -53,7 +51,7 @@
 - The [RPG Hero](/demos_tutorials/rpg_hero) example will teach you how to use Smithy in a more abstract way, and create 2D RPG characters with stats and fluff, as well as procedurally generated dialogue and quests. The tutorial focuses on using Smithy on GameObjects without meshes, and how to combine Smithy with other procedural generation techniques to give even more depth to procedurally created assets.
 
 <div class="well">
-  The source code and downloadable package for each demo is available on its page.
+  The source code and resources for each demo are available for download on the tutorial pages.
 </div>  
 
 # Installation and Setup

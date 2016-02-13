@@ -17,11 +17,9 @@
 
 
 ## Navigation
-![Inspector Navigation Panel](./img/inspector_nav.png)
+![Inspector Navigation Panel](../img/inspector_nav.png)
+
   The Navigation panel accesses the Information Panel, the Node Editor, and the Object Assembler.
-
-  ![Navigation Panel](./img/nav_panel.png)
-
   The Node Editor and Object Assembler are only available when the GameObject is active in the hierarchy. If the GameObject is saved as a prefab, these options will be disabled.
 
 ### Saving
@@ -50,7 +48,7 @@ Indicator | Status | Description
 ---
 
 # Information Panel
-![Information Panel](./img/panel_info.png)
+![Information Panel](../img/panel_info.png)
   The information panel is the first navigation panel option and provides an at-a-glance display of all critical Node information. The information panel is comprised of a warning panel, a generation depth counter, and a tag list panel.  
 
 ## Warning Panel
@@ -64,7 +62,7 @@ Issues that Smithy detects are arranged into three categories:
 
 Warning | Important | Critical
 :------- | :--------- | :--------
-<button type="button" class="btn btn-warning btn-sm"><i class="fa fa-exclamation-triangle fa-3x"></i></button> | <button type="button" class="btn btn-danger btn-sm" style="background-color:#d35400;"><i class="fa fa-exclamation-triangle fa-3x"></i></button> | <button type="button" class="btn btn-danger btn-sm style="background-color:#e74c3c;""><i class="fa fa-exclamation-triangle fa-3x"></i></button>
+<button type="button" class="btn btn-warning btn-sm"><i class="fa fa-exclamation-trivector fa-3x"></i></button> | <button type="button" class="btn btn-danger btn-sm" style="background-color:#d35400;"><i class="fa fa-exclamation-trivector fa-3x"></i></button> | <button type="button" class="btn btn-danger btn-sm style="background-color:#e74c3c;""><i class="fa fa-exclamation-trivector fa-3x"></i></button>
 These will not cause problems with generation, but may potentially produce undesirable results | These issues are will generate poor or unexpected results, but will not cause errors | This issues are serious and will throw errors or prevent any Nodes on this adapter from being detected.
 
 Alt-clicking the warning icon will open the relevant [troubleshooting](../troubleshooting) link in a new browser window.
@@ -76,18 +74,18 @@ Alt-clicking the warning icon will open the relevant [troubleshooting](../troubl
   Displays a list of all Tags present on the Adapter's nodes. Tags present on Plugs will be shown in <span class="label label-info">blue</span>, and Tags present on Sockets will be shown in <span class="label label-success">teal</span>.
 
   Clicking a tag will open the Tag Search popup window:
-  ![Tag Search Popup](./img/popup_tag-search.png)
+  ![Tag Search Popup](../img/popup_tag-search.png)
   This will list all Smithy-enabled objects with matching tags, as well as the specific nodes that are set to the same tag.
 
 ---
 
 # Node Editor Panel
-![Inspector Node Editor Panel](./img/inspector_node-editor.png)
+![Inspector Node Palette](../img/inspector_node-editor.png)
 
   The node editor panel is used for adding, editing, and deleting Plug and Socket nodes. It consists of the Generation Depth Panel, Node Palette, and Layer Panel.
 
 ### Generation Depth
-![Generation Depth Panel](./img/panel_generation-depth.png)
+![Generation Depth Panel](../img/panel_generation-depth.png)
 
   The generation depth panel sets an ```int``` value the maximum number depth of children this adapter can generate, if it is the base object.
 
@@ -124,8 +122,6 @@ Alt-clicking the warning icon will open the relevant [troubleshooting](../troubl
 
   ![Adding a new Plug Node](../img/add_node.gif)
 
-  Please note that Smithy won't allow snapping to points where nodes already exist on the same [layer](#node-layers) (you'll have to add a new layer.)
-
 <div class="well">
 Clone mode clones the node that is currently selected in the Layer Panel and adds it at the placement point, or as an unanchored node.
 </div>
@@ -134,7 +130,7 @@ Clone mode clones the node that is currently selected in the Layer Panel and add
 
    Vertex | Triangle Center | Midpoint | Off
    ---- | ---- | ---- | ----
-   Snaps the placement point to the vertex nearest the mouse cursor | Snaps the placement point to the centroid of the face triangle under the mouse cursor | Snaps the placement point to the midpoint of the edge nearest the mouse cursor | Disables snapping. The placement point will appear at the intersection of a ray fired from the mouse position.
+   Snaps the placement point to the vertex nearest the mouse cursor | Snaps the placement point to the centroid of the face trivector under the mouse cursor | Snaps the placement point to the midpoint of the edge nearest the mouse cursor | Disables snapping. The placement point will appear at the intersection of a ray fired from the mouse position.
 
   However, having a mesh isn't necessary, and Smithy will operate on meshless GameObjects. This is useful for creating nodes that handle pure code functions like AI behavior, mesh-agnostic particle effects, audio modifiers, and anything else that is useful for procedural generation but does not necessitate a mesh.
 
@@ -145,9 +141,9 @@ Clone mode clones the node that is currently selected in the Layer Panel and add
 ![Node Palette / Edit](../img/panel_edit-node-palette.png)
 
 | | |
-:---:|:---:|:---:
+:---:|:---:|:---:|:---:|:---:
 <i class="fa fa-hand-o-up fa-3x" style="color:#3498db"></i> | <i class="fa fa-arrows fa-3x" style="color:#3498db"></i> | <i class="fa fa-external-link-square fa-3x" style="color:#3498db"></i>
-Select Node | Move Node | Adjust Connection Angle
+Select Node | Move Node | Rotate Node | Scale Node | Adjust Connection Vector
 
   From left to right, the tabs under the Edit Node Tab set selection mode, move mode, and connection vector mode.
 
@@ -167,13 +163,13 @@ Select Node | Move Node | Adjust Connection Angle
 
   By clicking the <button type="button" class="btn btn-primary btn-sm"><i class="fa fa-magnet fa-lg"></i></button> toggle, the movement handles will disappear and the magenta placement point will appear when the mouse enters the Scene View. Left clicking in the scene view will set the node's position to the placement point position.
 
-  <a id="connection-angle-snap"></a>
+  <a id="connection-vector-snap"></a>
 
-  By default, a node moved in this manner will recalculate its' [Connection Angle](node/#connection-angle) (it will try to align to the new surface normal). To prevent this behavior, click the <button type="button" class="btn btn-primary btn-sm"><i class="fa fa-external-link-square fa-lg"></i></button> button, which will toggle connection vector preservation.
+  By default, a node moved in this manner will recalculate its' [Connection Vector](node/#connection-vector) (it will try to align to the new surface normal). To prevent this behavior, click the <button type="button" class="btn btn-primary btn-sm"><i class="fa fa-external-link-square fa-lg"></i></button> button, which will toggle connection vector preservation.
 
   ---
 
-  **Adjust Connection Angle mode** draws a Unity rotation handle at the node position. This can be dragged in any axis to set the [Connection Angle](node#connection-angle) of the node. This mode will also append the following connection vector quick-set subpanel to the palette:
+  **Adjust Connection Vector mode** draws a Unity rotation handle at the node position. This can be dragged in any axis to set the [Connection Vector](node#connection-vector) of the node. This mode will also append the following connection vector quick-set subpanel to the palette:
 
  | | | | | | |
  :---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|
@@ -237,7 +233,7 @@ Select Node | Move Node | Adjust Connection Angle
 
   | |
   :---:|:---
-  <button type="button" class="btn btn-warning btn-sm"><i class="fa fa-external-link-square fa-3x"></i></button> | Contains the same set of connection vector quick-set buttons as in the Adjust Connection Angle Mode of the [Node Palette](#node-palette). These buttons function identically to the palette set, and when clicked, the connection vectors of all selected nodes  will be changed.
+  <button type="button" class="btn btn-warning btn-sm"><i class="fa fa-external-link-square fa-3x"></i></button> | Contains the same set of connection vector quick-set buttons as in the Adjust Connection Vector Mode of the [Node Palette](#node-palette). These buttons function identically to the palette set, and when clicked, the connection vectors of all selected nodes  will be changed.
   <button type="button" class="btn btn-info btn-sm"><i class="fa fa-pie-chart fa-3x"></i></button> | Clicking a [Preset](manager/#probabilty-preset-manager) will apply values to that preset to all selected nodes.
   <button type="button" class="btn btn-info btn-sm"><i class="fa fa-tags fa-3x"></i></button> | This is the same [Tag Manager](node#tag-manager) as in the [Node Settings Window](node#node-settings-window), but changes here will be applied to all nodes in selection. Tags that appear in multiple nodes will be marked with a number corresponding to the number of nodes selected that contain the tag.
   <button type="button" class="btn btn-info btn-sm" style="background-color:#8e44ad;border-color:#8e44ad;"><i class="fa fa-bullseye fa-3x"></i></button> | Like the [Node Settings Window](node#node-settings-window), but applies the entered [jitter values](node#generation-jitter) to each node in the selection.
