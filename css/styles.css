@@ -1,5 +1,11 @@
 /* BOOTSTRAP 3.x GLOBAL STYLES
 -------------------------------------------------- */
+
+html, body {
+    max-width: 100%;
+    overflow-x: hidden;
+}
+
 body {
   padding-bottom: 00px;
   color: #5a5a5a;
@@ -95,11 +101,13 @@ footer{
   margin: 80px 0; /* Space out the Bootstrap <hr> more */
 }
 .featurette {
-  padding-top: 40px; /* Vertically center images part 1: add padding above and below text. */
+  padding-top: 50px; /* Vertically center images part 1: add padding above and below text. */
   overflow: hidden; /* Vertically center images part 2: clear their floats. */
 }
 .featurette-image {
-  margin-top: -40px; /* Vertically center images part 3: negative margin up the image the same amount of the padding to center it. */
+  margin: 10px;
+  margin-top: -50px; /* Vertically center images part 3: negative margin up the image the same amount of the padding to center it. */
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
 }
 
 /* Give some space on the sides of the floated elements so text doesn't run right into it. */

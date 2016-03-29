@@ -1,0 +1,747 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        <meta name="author" content="Evil Wizard Studios">
+        
+        <link rel="shortcut icon" href="../../img/favicon.ico">
+
+	<title>Adapters - Smithy Documentation</title>
+
+        <link href="../../css/bootstrap-custom.min.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+        <link rel="stylesheet" href="../../css/highlight.css">
+        <link href="../../css/base.css" rel="stylesheet">
+
+        <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!--[if lt IE 9]>
+            <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+            <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+        <![endif]-->
+
+        
+    </head>
+
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+    <div class="container">
+
+        <!-- Collapsed navigation -->
+        <div class="navbar-header">
+            <!-- Expander button -->
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+
+            <!-- Main title -->
+            <a class="navbar-brand" href="../..">Smithy Documentation</a>
+        </div>
+
+        <!-- Expanded navigation -->
+        <div class="navbar-collapse collapse">
+            <!-- Main navigation -->
+            <ul class="nav navbar-nav">
+            
+            
+                <li >
+                    <a href="../..">Home</a>
+                </li>
+            
+            
+            
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Demos and Tutorials <b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                    
+                        <li >
+                            <a href="../../demos_tutorials/quick_start/">Quick Start</a>
+                        </li>
+                    
+                        <li >
+                            <a href="../../demos_tutorials/swamp_tile/">Strategy Game Tile</a>
+                        </li>
+                    
+                        <li >
+                            <a href="../../demos_tutorials/fps_arsenal/">FPS Arsenal</a>
+                        </li>
+                    
+                        <li >
+                            <a href="../../demos_tutorials/rpg_hero/">RPG Hero</a>
+                        </li>
+                    
+                    </ul>
+                </li>
+            
+            
+            
+                <li class="dropdown active">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Editor <b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                    
+                        <li class="active">
+                            <a href="./">Adapters</a>
+                        </li>
+                    
+                        <li >
+                            <a href="../node/">Nodes</a>
+                        </li>
+                    
+                        <li >
+                            <a href="../manager/">Managers</a>
+                        </li>
+                    
+                    </ul>
+                </li>
+            
+            
+            
+                <li >
+                    <a href="../../generation/">Generation API</a>
+                </li>
+            
+            
+            
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Edition-Specific <b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                    
+                        <li >
+                            <a href="../../edition_specific/editions/">Editions Overview</a>
+                        </li>
+                    
+                        <li >
+                            <a href="../../edition_specific/reader/">Reader</a>
+                        </li>
+                    
+                        <li >
+                            <a href="../../edition_specific/exporter/">Exporter</a>
+                        </li>
+                    
+                        <li >
+                            <a href="../../edition_specific/runtime_editor/">Runtime Editor</a>
+                        </li>
+                    
+                    </ul>
+                </li>
+            
+            
+            
+                <li >
+                    <a href="../../troubleshooting/">Troubleshooting</a>
+                </li>
+            
+            
+            </ul>
+
+            <!-- Search, Navigation and Repo links -->
+            <ul class="nav navbar-nav navbar-right">
+                <li >
+                    <a rel="next" href="../../demos_tutorials/rpg_hero/">
+                        <i class="fa fa-arrow-left"></i> Previous
+                    </a>
+                </li>
+                <li >
+                    <a rel="prev" href="../node/">
+                        Next <i class="fa fa-arrow-right"></i>
+                    </a>
+                </li>
+                
+            </ul>
+        </div>
+    </div>
+</div>
+
+        <div class="container">
+            <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
+    <ul class="nav bs-sidenav">
+    
+        <li class="main active"><a href="#overview">Overview</a></li>
+        
+    
+        <li class="main "><a href="#inspector">Inspector</a></li>
+        
+            <li><a href="#navigation">Navigation</a></li>
+        
+    
+        <li class="main "><a href="#information-panel">Information Panel</a></li>
+        
+            <li><a href="#warning-panel">Warning Panel</a></li>
+        
+            <li><a href="#generation-depth-panel">Generation Depth Panel</a></li>
+        
+            <li><a href="#tag-list-panel">Tag List Panel</a></li>
+        
+    
+        <li class="main "><a href="#node-editor-panel">Node Editor Panel</a></li>
+        
+            <li><a href="#generation-depth">Generation Depth</a></li>
+        
+            <li><a href="#node-palette">Node Palette</a></li>
+        
+            <li><a href="#node-layers">Node Layers</a></li>
+        
+            <li><a href="#node-pills">Node Pills</a></li>
+        
+    
+        <li class="main "><a href="#object-assembler-panel">Object Assembler Panel</a></li>
+        
+            <li><a href="#socket-view-panel">Socket View Panel</a></li>
+        
+            <li><a href="#plug-selector">Plug Selector</a></li>
+        
+            <li><a href="#generating-in-editor-mode">Generating in Editor Mode</a></li>
+        
+    
+    </ul>
+</div></div>
+            <div class="col-md-9" role="main">
+
+<h1 id="overview">Overview</h1>
+<p>Smithy Adapters are <a href="http://docs.unity3d.com/Manual/UsingComponents.html">Components</a> that contain <a href="../node">Nodes</a>, and are required for <a href="../../generation">procedurally generating objects</a>.</p>
+<p>Adapters are added by clicking <span class="label label-default">Add Component</span> in the GameObject inspector, and selecting <span class="label label-default">Smithy</span> <i class="fa fa-long-arrow-right"></i> <span class="label label-default">Add Smithy Adapter</span></p>
+<p><div class="panel panel-info">
+  <div class="panel-body">
+  Please note that Smithy can only load and instantiate Prefabs that are located in the <em>/Assets/Resources</em> folder of your Project, or <a href="../generation#methods">Asset Bundles</a> that have already been loaded.
+  </div>
+  </div></p>
+<h1 id="inspector">Inspector</h1>
+<p>Adapters are equipped with a custom inspector, which is the principal point of access for working with <a href="../node">Nodes</a>. Once a Smithy Adapter component is added to a GameObject, it will appear in that GameObject's component inspector.</p>
+<p>Very narrow inspector layouts may make some UI components overlap. If this is the case, widen the inspector window to a comfortable width.</p>
+<h2 id="navigation">Navigation</h2>
+<p><img alt="Inspector Navigation Panel" src="../../img/inspector_nav.png" /></p>
+<p>The Navigation panel accesses the Information Panel, the Node Editor, and the Object Assembler.
+  The Node Editor and Object Assembler are only available when the GameObject is active in the hierarchy. If the GameObject is saved as a prefab, these options will be disabled.</p>
+<h3 id="saving">Saving</h3>
+<p>Smithy uses asset labels and prefab assets during procedural generation. Therefore, GameObjects must be saved as prefabs before they can be used by Smithy.</p>
+<p>Correctly saved and labeled prefabs are crucial to Smithy's operation, so each Adapter is able to manage the saving of it's linked prefab. Simply activate the autosave in the save menu once a prefab has been linked.</p>
+<p><div class="panel panel-warning">
+  <div class="panel-body">
+  For best results, let Smithy manage the saving and updating of prefabs with that have Smithy Adapters. Smithy will ensure that these prefabs are labeled correctly prior to building, and useable in generation. Manually saving and updating Smithy prefabs is not recommended - it may work, but can't be guaranteed.<br />
+  </div>
+  </div></p>
+<hr />
+<p>The top right corner of the navigation panel contains the Save indicator. The icon changes based on state:</p>
+<table>
+<thead>
+<tr>
+<th align="left">Indicator</th>
+<th>Status</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><button type="button" class="btn btn-warning btn-sm"><i class="fa fa-save fa-4x"></i></button></td>
+<td><strong>Unsaved</strong><br><em>(no prefab)</em></td>
+<td>This GameObject has not been saved as a prefab. Clicking this icon will allow you to save the GameObject and create a prefab connection.</td>
+</tr>
+<tr>
+<td align="left"><button type="button" class="btn btn-success btn-sm"><i class="fa fa-save fa-4x"></i></button></td>
+<td><strong>Unsaved</strong></td>
+<td>This GameObject has a prefab connection but has unsaved changes. Clicking this icon will save changes to the prefab, or, allow you to activate Smithy's autosave feature.</td>
+</tr>
+<tr>
+<td align="left"><button type="button" class="btn btn-danger btn-sm"><i class="fa fa-ellipsis-h fa-4x"></i></button></td>
+<td><strong>Saving</strong></td>
+<td>This GameObject is currently saving any changes. This should only take a brief moment, but allow it to save before starting a build or entering Game mode.</td>
+</tr>
+<tr>
+<td align="left"><button type="button" class="btn btn-primary btn-sm"><i class="fa fa-check-circle fa-4x"></i></button></td>
+<td><strong>Prefab OK</strong> <em>(autosave off)</em></td>
+<td>This GameObject has a prefab connection that is current with any changes made. Autosave is not on and the GameObject will need to be saved manually. Click to <strong>activate</strong> autosave.</td>
+</tr>
+<tr>
+<td align="left"><button type="button" class="btn btn-info btn-sm"><i class="fa fa-check-circle fa-4x"></i></button></td>
+<td><strong>Prefab OK</strong> <em>(autosave on)</em></td>
+<td>This GameObject has a prefab connection that is current with any changes made. Autosave is on. Click to <strong>deactivate</strong> autosave.</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h1 id="information-panel">Information Panel</h1>
+<p><img alt="Information Panel" src="../../img/panel_info.png" />
+  The information panel is the first navigation panel option and provides an at-a-glance display of all critical Node information. The information panel is comprised of a warning panel, a generation depth counter, and a tag list panel.  </p>
+<h2 id="warning-panel">Warning Panel</h2>
+<p>The warning panel will display any issues that might affect the operation of this adapter or its nodes. It has two states:</p>
+<table>
+<thead>
+<tr>
+<th align="center"></th>
+<th align="center"></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center"><button type="button" class="btn btn-success btn-sm"><i class="fa fa-check fa-5x"></i></button> &nbsp;&nbsp;&nbsp;<strong>Valid</strong></td>
+<td align="center"><button type="button" class="btn btn-danger btn-sm"><i class="fa fa-hashtag fa-5x"></i></button> &nbsp;&nbsp;&nbsp;<strong>Problems Detected</strong><br><em>(where # is the number of issues)</em></td>
+</tr>
+</tbody>
+</table>
+<p>Issues that Smithy detects are arranged into three categories:</p>
+<table>
+<thead>
+<tr>
+<th align="left">Warning</th>
+<th>Important</th>
+<th>Critical</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><button type="button" class="btn btn-warning btn-sm"><i class="fa fa-exclamation-trivector fa-3x"></i></button></td>
+<td><button type="button" class="btn btn-danger btn-sm" style="background-color:#d35400;"><i class="fa fa-exclamation-trivector fa-3x"></i></button></td>
+<td><button type="button" class="btn btn-danger btn-sm style="background-color:#e74c3c;""><i class="fa fa-exclamation-trivector fa-3x"></i></button></td>
+</tr>
+<tr>
+<td align="left">These will not cause problems with generation, but may potentially produce undesirable results</td>
+<td>These issues are will generate poor or unexpected results, but will not cause errors</td>
+<td>This issues are serious and will throw errors or prevent any Nodes on this adapter from being detected.</td>
+</tr>
+</tbody>
+</table>
+<p>Alt-clicking the warning icon will open the relevant <a href="../../troubleshooting">troubleshooting</a> link in a new browser window.</p>
+<h2 id="generation-depth-panel">Generation Depth Panel</h2>
+<p>Displays the <a href="#generation-depth">maximum generation depth</a> for this adapter.</p>
+<h2 id="tag-list-panel">Tag List Panel</h2>
+<p>Displays a list of all Tags present on the Adapter's nodes. Tags present on Plugs will be shown in <span class="label label-info">blue</span>, and Tags present on Sockets will be shown in <span class="label label-success">teal</span>.</p>
+<p>Clicking a tag will open the Tag Search popup window:
+  <img alt="Tag Search Popup" src="../../img/popup_tag-search.png" />
+  This will list all Smithy-enabled objects with matching tags, as well as the specific nodes that are set to the same tag.</p>
+<hr />
+<h1 id="node-editor-panel">Node Editor Panel</h1>
+<p><img alt="Inspector Node Palette" src="../../img/inspector_node-editor.png" /></p>
+<p>The node editor panel is used for adding, editing, and deleting Plug and Socket nodes. It consists of the Generation Depth Panel, Node Palette, and Layer Panel.</p>
+<h3 id="generation-depth">Generation Depth</h3>
+<p><img alt="Generation Depth Panel" src="../../img/panel_generation-depth.png" /></p>
+<p>The generation depth panel sets an <code>int</code> value the maximum number depth of children this adapter can generate, if it is the base object.</p>
+<p>In other words, a base object with a maximum generation depth of <em>n</em> can have a GameObject hierarchy that is, at most, <em>n</em> levels deep.</p>
+<p>For example:</p>
+<table>
+<thead>
+<tr>
+<th align="center"></th>
+<th align="center"></th>
+<th align="center"></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center"><strong>depth = 2</strong></td>
+<td align="center"><strong>depth = 3</strong></td>
+<td align="center"><strong>depth = 5</strong></td>
+</tr>
+<tr>
+<td align="center"><img alt="Depth 2" src="../../img/depth-2.png" /><br><em>(13 GameObjects at Width = 3)</em></td>
+<td align="center"><img alt="Depth 3" src="../../img/depth-3.png" /><br><em>(40 GameObjects at Width = 3)</em></td>
+<td align="center"><img alt="Depth 5" src="../../img/depth-5.png" /><br><em>(364 GameObjects at Width = 3)</em></td>
+</tr>
+</tbody>
+</table>
+<p><div class="panel panel-danger">
+  <div class="panel-body">
+  Please keep in mind that while generation depth cannot be set to infinity, it can be set very high, and Nodes can be structured to produce hierarchies that expand exponentially. Generation calls that produce very deep hierarchies - especially multiple calls per frame - will <em>severely</em> impact performance.
+  </div>
+  </div></p>
+<p>The default maximum generation depth is <strong>5</strong></p>
+<h3 id="node-palette">Node Palette</h3>
+<p>The Node Palette contains the controls to add, move, adjust, and delete nodes.</p>
+<h4 id="add-node-tab">Add Node Tab</h4>
+<p><img alt="Node Palette / Add" src="../../img/panel_add-node-palette.png" /></p>
+<table>
+<thead>
+<tr>
+<th align="center"></th>
+<th align="center"></th>
+<th align="center"></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center"><i class="fa fa-plug fa-3x" style="color:#3498db"></i></td>
+<td align="center"><i class="fa fa-plus-square fa-3x" style="color:#1abc9c"></i></td>
+<td align="center"><i class="fa fa-copy fa-3x" style="color:#9b59b6"></i></td>
+</tr>
+<tr>
+<td align="center">Add Plug</td>
+<td align="center">Add Socket</td>
+<td align="center">Clone Node</td>
+</tr>
+</tbody>
+</table>
+<p>From left to right, the tabs under the add node tab switch the add mode to Plug, Socket, and Clone. Moving the mouse over the object mesh in the <a href="http://docs.unity3d.com/Manual/UsingTheSceneView.html">Scene View Window</a> will draw a magenta dot - this is the placement point for new nodes. Left click the mouse, and a new node of the selected node type will be at the placement point.</p>
+<p><img alt="Adding a new Plug Node" src="../../img/add_node.gif" /></p>
+<div class="well">
+Clone mode clones the node that is currently selected in the Layer Panel and adds it at the placement point, or as an unanchored node.
+</div>
+
+<p>Smithy manages an automatically-generated MeshCollider specifically for adding and moving nodes around object models, so you can add nodes directly to the surface of your mesh. To help with placement, the Node Palette includes several mesh snapping options:</p>
+<table>
+<thead>
+<tr>
+<th>Vertex</th>
+<th>Triangle Center</th>
+<th>Midpoint</th>
+<th>Off</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Snaps the placement point to the vertex nearest the mouse cursor</td>
+<td>Snaps the placement point to the centroid of the face trivector under the mouse cursor</td>
+<td>Snaps the placement point to the midpoint of the edge nearest the mouse cursor</td>
+<td>Disables snapping. The placement point will appear at the intersection of a ray fired from the mouse position.</td>
+</tr>
+</tbody>
+</table>
+<p>However, having a mesh isn't necessary, and Smithy will operate on meshless GameObjects. This is useful for creating nodes that handle pure code functions like AI behavior, mesh-agnostic particle effects, audio modifiers, and anything else that is useful for procedural generation but does not necessitate a mesh.</p>
+<p>Either way, clicking the <button type="button" class="btn btn-primary btn-sm"><i class="fa fa-unlink fa-lg"></i></button> button will add a new node to (0,0,0).</p>
+<h4 id="edit-node-tab">Edit Node Tab</h4>
+<p><img alt="Node Palette / Edit" src="../../img/panel_edit-node-palette.png" /></p>
+<table>
+<thead>
+<tr>
+<th align="center"></th>
+<th align="center"></th>
+<th align="center"></th>
+<th align="center"></th>
+<th align="center"></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center"><i class="fa fa-hand-o-up fa-3x" style="color:#3498db"></i></td>
+<td align="center"><i class="fa fa-arrows fa-3x" style="color:#3498db"></i></td>
+<td align="center"><i class="fa fa-external-link-square fa-3x" style="color:#3498db"></i></td>
+<td align="center"></td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center">Select Node</td>
+<td align="center">Move Node</td>
+<td align="center">Rotate Node</td>
+<td align="center">Scale Node</td>
+<td align="center">Adjust Connection Vector</td>
+</tr>
+</tbody>
+</table>
+<p>From left to right, the tabs under the Edit Node Tab set selection mode, move mode, and connection vector mode.</p>
+<hr />
+<p>In <strong>selection mode</strong>, left-clicking on a node in the Scene View Window will select that node in the inspector. The Gizmo icon will turn yellow to highlight when it's under the mouse pointer, and green when it has been selected. Nodes can also be selected by clicking the name of the node in the <a href="#layer-panel">Layer Panel</a>.</p>
+<hr />
+<p><strong>Move mode</strong> allows repositioning of the selected node. If a node is not currently selected (highlighted green in the Scene View and layer panel), this option will be disabled.</p>
+<p>Move mode appends a subpanel to the palette with the following icons:</p>
+<p><img alt="Move Mode Subpanel" src="../../img/panel_move-subpanel.png" /></p>
+<p>By default, move mode draws a Unity movement handle in the Scene View that can be used to drag the node around the edit area.</p>
+<p>By clicking the <button type="button" class="btn btn-primary btn-sm"><i class="fa fa-magnet fa-lg"></i></button> toggle, the movement handles will disappear and the magenta placement point will appear when the mouse enters the Scene View. Left clicking in the scene view will set the node's position to the placement point position.</p>
+<p><a id="connection-vector-snap"></a></p>
+<p>By default, a node moved in this manner will recalculate its' <a href="../node/#connection-vector">Connection Vector</a> (it will try to align to the new surface normal). To prevent this behavior, click the <button type="button" class="btn btn-primary btn-sm"><i class="fa fa-external-link-square fa-lg"></i></button> button, which will toggle connection vector preservation.</p>
+<hr />
+<p><strong>Adjust Connection Vector mode</strong> draws a Unity rotation handle at the node position. This can be dragged in any axis to set the <a href="../node#connection-vector">Connection Vector</a> of the node. This mode will also append the following connection vector quick-set subpanel to the palette:</p>
+<table>
+<thead>
+<tr>
+<th align="center"></th>
+<th align="center"></th>
+<th align="center"></th>
+<th align="center"></th>
+<th align="center"></th>
+<th align="center"></th>
+<th align="center"></th>
+<th align="center"></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center"><button type="button" class="btn btn-primary btn-sm"><i class="fa fa-arrow-up fa-3x"></i></button></td>
+<td align="center"><button type="button" class="btn btn-primary btn-sm"><i class="fa fa-arrow-down fa-3x"></i></button></td>
+<td align="center"><button type="button" class="btn btn-primary btn-sm"><i class="fa fa-arrow-left fa-3x"></i></button></td>
+<td align="center"><button type="button" class="btn btn-primary btn-sm"><i class="fa fa-arrow-right fa-3x"></i></button></td>
+<td align="center"><button type="button" class="btn btn-primary btn-sm"><h4>&nbsp;&nbsp;&nbsp;<strong>F</strong>&nbsp;&nbsp;&nbsp;</h4></button></td>
+<td align="center"><button type="button" class="btn btn-primary btn-sm"><h4>&nbsp;&nbsp;&nbsp;<strong>N</strong>&nbsp;&nbsp;&nbsp;</h4></button></td>
+<td align="center"><button type="button" class="btn btn-primary btn-sm"><h4>&nbsp;&nbsp;&nbsp;<strong>B</strong>&nbsp;&nbsp;&nbsp;</h4></button></td>
+<td align="center"><button type="button" class="btn btn-primary btn-sm"><h4>&nbsp;&nbsp;&nbsp;<strong>C</strong>&nbsp;&nbsp;&nbsp;</h4></button></td>
+</tr>
+<tr>
+<td align="center">World Up</td>
+<td align="center">World Down</td>
+<td align="center">World Left</td>
+<td align="center">World Right</td>
+<td align="center">World Forward</td>
+<td align="center">World Backward</td>
+<td align="center">Nearest Surface Normal</td>
+<td align="center">Align to Object Center</td>
+</tr>
+</tbody>
+</table>
+<p>Clicking any of these options will directly set the node's connection vector.</p>
+<h4 id="delete-node-tab">Delete Node Tab</h4>
+<p>Delete mode will delete the node nearest the mouse cursor when left-clicking in the scene view.</p>
+<h4 id="palette-information-panel">Palette Information Panel</h4>
+<p><img alt="Palette Information Panel Example" src="../../img/panel_palette_info.png" /></p>
+<p>For clarity's sake, there is an information box located at the bottom of the palette. This box reports the currently selected option, or set of options.</p>
+<h3 id="node-layers">Node Layers</h3>
+<p>Nodes on an adapter are collected into layers. These layers are just an organizational tool - they don't affect generation - but can be used to edit multiple nodes at once.</p>
+<p>All adapters have at least one layer. Smithy does not allow adapters without layers, and deleting the last layer on an adapter will replace it with a new layer. Layers without nodes are, however, valid.</p>
+<p>The current active layer (the layer that will contain nodes added through the <a href="#node-palette">Node Palette</a>) is colored <span class="label label-success">teal</span>. Inactive layers are colored <span class="label label-primary">navy</span>, and can be activated by clicking the layer name. Only one layer can be active at a time.</p>
+<p><div class="well"> Nodes on inactive layers will still contribute to procedural generation, layers are just an organizational tool. </div></p>
+<p><img alt="Node Layer Pill" src="../../img/layer_pill.png" /></p>
+<table>
+<thead>
+<tr>
+<th align="center"></th>
+<th align="left"></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center"><button type="button" class="btn btn-primary btn-sm">&nbsp;&nbsp;<i class="fa fa-caret-down fa-3x"></i>&nbsp;&nbsp;</button></td>
+<td align="left">Expands or collapses the layer's node list</td>
+</tr>
+<tr>
+<td align="center"><button type="button" class="btn btn-success btn-sm"><strong>Layer 0</strong></button></td>
+<td align="left">The active layer's name.</td>
+</tr>
+<tr>
+<td align="center"><button type="button" class="btn btn-primary btn-sm"><strong>Layer 0</strong></button></td>
+<td align="left">An inactive layer name. Click to set as the active layer.</td>
+</tr>
+<tr>
+<td align="center"><button type="button" class="btn btn-info btn-sm"><i class="fa fa-gear fa-3x"></i></button></td>
+<td align="left">Opens the <a href="#layer-window">Layer Window</a></td>
+</tr>
+<tr>
+<td align="center"><button type="button" class="btn btn-primary btn-sm" style="background-color:#27ae60;border-color:#27ae60;"><i class="fa fa-sort-amount-asc fa-3x"></i></button></td>
+<td align="left">Reverses the ordering of the layer's node list.</td>
+</tr>
+<tr>
+<td align="center"><button type="button" class="btn btn-primary btn-sm" style="background-color:#27ae60;border-color:#27ae60;"><i class="fa fa-reorder fa-3x"></i></button></td>
+<td align="left">Sort nodes. Nodes can be sorted by <a href="../node#node-type">type</a>, <a href="../node#name">name</a>, <a href="../node#tags">tags</a>, <a href="../node#selection-probability">selection probability</a>, <a href="../node#position">position</a> (x, y, or z), or by visibility.</td>
+</tr>
+<tr>
+<td align="center"><button type="button" class="btn btn-primary btn-sm" style="background-color:#9b59b6;border-color:#9b59b6;"><i class="fa fa-eye fa-3x"></i></button></td>
+<td align="left">Toggle visibility for all nodes in the layer. Invisible nodes will still contribute to generation.</td>
+</tr>
+<tr>
+<td align="center"><button type="button" class="btn btn-danger btn-sm"><i class="fa fa-trash fa-3x"></i></button></td>
+<td align="left">Delete the layer and all nodes it contains.</td>
+</tr>
+</tbody>
+</table>
+<p>New layers can be added by clicking the <button type="button" class="btn btn-primary btn-sm"><i class="fa fa-clone fa-lg">+</i></button> button below the layers panel.</p>
+<p>The nodes in each layer contain their own control pills, which are explained in the <a href="../node#node-editor-pill">Node Editor Pills</a> section of the documentation on nodes.</p>
+<h4 id="layer-window">Layer Window</h4>
+<p><img alt="Layer Window" src="../../img/window_layer.png" /></p>
+<p>The layer window allows several of the <a href="../node/#node-window">Node Window</a> controls to be applied to multiple nodes at once.</p>
+<p>The left column is the node selection set. This is a list of all nodes on the layer, by type and name. The bottom of this column contains buttons for selecting/deselecting all plugs, selecting/deselecting all sockets, and selecting/deselecting all nodes.</p>
+<hr />
+<p>The right-hand column contains the following five controls:</p>
+<p><div class="well"> The functions of these controls are identical to the controls in the <a href="../node#node-settings-window">Node Settings Window</a>. More information about each control is available on that page. </div></p>
+<table>
+<thead>
+<tr>
+<th align="center"></th>
+<th align="left"></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center"><button type="button" class="btn btn-warning btn-sm"><i class="fa fa-external-link-square fa-3x"></i></button></td>
+<td align="left">Contains the same set of connection vector quick-set buttons as in the Adjust Connection Vector Mode of the <a href="#node-palette">Node Palette</a>. These buttons function identically to the palette set, and when clicked, the connection vectors of all selected nodes  will be changed.</td>
+</tr>
+<tr>
+<td align="center"><button type="button" class="btn btn-info btn-sm"><i class="fa fa-pie-chart fa-3x"></i></button></td>
+<td align="left">Clicking a <a href="../manager/#probabilty-preset-manager">Preset</a> will apply values to that preset to all selected nodes.</td>
+</tr>
+<tr>
+<td align="center"><button type="button" class="btn btn-info btn-sm"><i class="fa fa-tags fa-3x"></i></button></td>
+<td align="left">This is the same <a href="../node#tag-manager">Tag Manager</a> as in the <a href="../node#node-settings-window">Node Settings Window</a>, but changes here will be applied to all nodes in selection. Tags that appear in multiple nodes will be marked with a number corresponding to the number of nodes selected that contain the tag.</td>
+</tr>
+<tr>
+<td align="center"><button type="button" class="btn btn-info btn-sm" style="background-color:#8e44ad;border-color:#8e44ad;"><i class="fa fa-bullseye fa-3x"></i></button></td>
+<td align="left">Like the <a href="../node#node-settings-window">Node Settings Window</a>, but applies the entered <a href="../node#generation-jitter">jitter values</a> to each node in the selection.</td>
+</tr>
+<tr>
+<td align="center"><button type="button" class="btn btn-info btn-sm" style="background-color:#27ae60;border-color:#27ae60;"><i class="fa fa-paint-brush fa-3x"></i></button></td>
+<td align="left"><a href="../node#material-options">Material Options</a> added here will be copied to all nodes in the selection</td>
+</tr>
+</tbody>
+</table>
+<p>These controls operate over every node currently selected in the left hand panel. After a successful operation, a notification box will appear in the window for a few seconds.</p>
+<h2 id="node-pills">Node Pills</h2>
+<p>When a <a href="#node-layers">Node Layer</a> is expanded, it will show a list of all nodes that exist on that layer. Each node is represented by a pill menu that offers the following controls:</p>
+<table>
+<thead>
+<tr>
+<th align="center"></th>
+<th align="left"></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center"><button type="button" class="btn btn-success btn-sm">&nbsp;<i class="fa fa-plus-square fa-3x"></i>&nbsp;</button><button type="button" class="btn btn-info btn-sm"><i class="fa fa-plug fa-3x"></i></button></td>
+<td align="left">Change the <a href="../node#type">Node Type</a> of the node.</td>
+</tr>
+<tr>
+<td align="center"><button type="button" class="btn btn-success btn-sm"><strong>Node Name</strong></button></td>
+<td align="left">Click to select the Node</td>
+</tr>
+<tr>
+<td align="center"><button type="button" class="btn btn-primary btn-sm"><i class="fa fa-gear fa-3x"></i></button></td>
+<td align="left">Open the <a href="../node#node-settings-window">Node Settings Window</a></td>
+</tr>
+<tr>
+<td align="center"><button type="button" class="btn btn-info btn-sm"><i class="fa fa-tag fa-3x"></i></button></td>
+<td align="left">Reports the number of tags on the node. Clicking will open the node's <a href="../node#tag-manager">tag manager</a></td>
+</tr>
+<tr>
+<td align="center"><button type="button" class="btn btn-info btn-sm"><i class="fa fa-pie-chart fa-3x"></i></button></td>
+<td align="left">Reports the <a href="../node#socket-fill-probability">socket fill probability</a> or <a href="../node#plug-weight">plug selection weight</a> of the node. Click to open the node's <a href="../node#probaility-settings">probability settings window</a></td>
+</tr>
+<tr>
+<td align="center"><button type="button" class="btn btn-primary btn-sm" style="background-color:#27ae60;border-color:#27ae60;"><i class="fa fa-clone fa-3x"></i></button></td>
+<td align="left">Change the node's <a href="#node-layers">Layer</a></td>
+</tr>
+<tr>
+<td align="center"><button type="button" class="btn btn-primary btn-sm" style="background-color:#27ae60;border-color:#27ae60;">&nbsp;&nbsp;<i class="fa fa-sort fa-3x"></i>&nbsp;&nbsp;</button></td>
+<td align="left">Change the order of the node in its layer (overrides sorting options)</td>
+</tr>
+<tr>
+<td align="center"><button type="button" class="btn btn-primary btn-sm" style="background-color:#8e44ad;border-color:#8e44ad;"><i class="fa fa-eye fa-3x"></i></button></td>
+<td align="left">Toggle the visibility of the node</td>
+</tr>
+<tr>
+<td align="center"><button type="button" class="btn btn-danger btn-sm"><i class="fa fa-trash fa-3x"></i></button></td>
+<td align="left">Delete the node</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h1 id="object-assembler-panel">Object Assembler Panel</h1>
+<p><img alt="Object Assembler Panel" src="../../img/panel_object-assembler.png" /></p>
+<p>The Object Assembler panel is a quick way to manually build object hierarchies and test generation in the Editor.</p>
+<h3 id="socket-view-panel">Socket View Panel</h3>
+<p>The socket view panel is similar to the <a href="#node-layers">Node Layer Panel</a>, but only displays the sockets on the adapter. Slightly different from the <a href="../node-pills">Node Editor Node Pills</a>, each socket pill contains the following options:</p>
+<table>
+<thead>
+<tr>
+<th align="center"></th>
+<th align="left"></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center"><button type="button" class="btn btn-warning btn-sm"><i class="fa fa-plus-square fa-3x"></i></button></td>
+<td align="left">Change the <a href="../node#type">Node Type</a> of the node. Sockets changed to plugs will be removed from the Object Assembler Socket View</td>
+</tr>
+<tr>
+<td align="center"><button type="button" class="btn btn-warning btn-sm"><strong>Node Name</strong></button></td>
+<td align="left">Click to select the Node</td>
+</tr>
+<tr>
+<td align="center"><button type="button" class="btn btn-primary btn-sm"><i class="fa fa-gear fa-3x"></i></button></td>
+<td align="left">Open the <a href="../node#node-settings-window">Node Settings Window</a></td>
+</tr>
+<tr>
+<td align="center"><button type="button" class="btn btn-primary btn-sm" style="background-color:#8e44ad;border-color:#8e44ad;"><i class="fa fa-random fa-3x"></i></button></td>
+<td align="left">Generate a plug object for this node (ignores <a href="../node#socket-fill-probability">socket fill probability</a>)</td>
+</tr>
+<tr>
+<td align="center"><button type="button" class="btn btn-primary btn-sm" style="background-color:#8e44ad;border-color:#8e44ad;"><i class="fa fa-eraser fa-3x"></i></button></td>
+<td align="left">Destroy the child plug of this socket, if it exists.</td>
+</tr>
+<tr>
+<td align="center"><button type="button" class="btn btn-info btn-sm"><i class="fa fa-crosshairs fa-3x"></i></button></td>
+<td align="left">Displays the name of the current child plug for this node, if it exists. Clicking on this icon will open the <a href="#plug-selector">Plug Selector Window</a></td>
+</tr>
+<tr>
+<td align="center"><button type="button" class="btn btn-primary btn-sm" style="background-color:#27ae60;border-color:#27ae60;"><i class="fa fa-clone fa-3x"></i></button></td>
+<td align="left">Change the socket's <a href="#node-layers">Node Layer</a></td>
+</tr>
+<tr>
+<td align="center"><button type="button" class="btn btn-primary btn-sm" style="background-color:#27ae60;border-color:#27ae60;">&nbsp;&nbsp;<i class="fa fa-sort fa-3x"></i>&nbsp;&nbsp;</button></td>
+<td align="left">Change the order of the socket in its layer</td>
+</tr>
+<tr>
+<td align="center"><button type="button" class="btn btn-primary btn-sm" style="background-color:#8e44ad;border-color:#8e44ad;"><i class="fa fa-eye fa-3x"></i></button></td>
+<td align="left">Toggle the visibility of the socket</td>
+</tr>
+<tr>
+<td align="center"><button type="button" class="btn btn-danger btn-sm"><i class="fa fa-trash fa-3x"></i></button></td>
+<td align="left">Delete the socket</td>
+</tr>
+</tbody>
+</table>
+<h2 id="plug-selector">Plug Selector</h2>
+<p><img alt="Plug Selection Window" src="../../img/window_plug-selection.png" /></p>
+<p>Clicking the <button type="button" class="btn btn-info btn-sm"><i class="fa fa-crosshairs fa-lg"></i></button> button of a socket pill will open the Plug Selector Window, which will show all adapter-enabled prefabs that are valid as plug objects for this socket.</p>
+<p>Clicking one of these objects will instantiate a copy as a plug object for the current socket.</p>
+<div class="well">
+  If the selected plug object contains multiple plug nodes that are valid for the current socket, a sub-window will ask you to select which node will act as the connection point.
+</div>
+
+<hr />
+<p>By default, the plug selector window will only display plug objects that share one or more <a href="../node#tags">tags</a> with the current socket. Clicking one of these tags will bring up the <a href="#tag-list-panel">tag search popup</a>.</p>
+<p>Clicking the <button type="button" class="btn btn-info btn-sm"><i class="fa fa-lock fa-lg"></i></button> button to toggle the tag override mode. While tag override is on, <strong>any</strong> plug can be set to the current socket, regardless of tags.</p>
+<h2 id="generating-in-editor-mode">Generating in Editor Mode</h2>
+<p>The Object Assembler will also let you procedurally generate objects in the editor. At the bottom of the socket view panel, there are four buttons. From left to right:</p>
+<table>
+<thead>
+<tr>
+<th align="center"></th>
+<th align="center"></th>
+<th align="left"></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center"><button type="button" class="btn btn-primary btn-sm"><i class="fa fa-bullseye fa-3x"></i></button></td>
+<td align="center">Set Generator Seed</td>
+<td align="left">Toggle to activate the <a href="#generation-seed">generation seed</a></td>
+</tr>
+<tr>
+<td align="center"><button type="button" class="btn btn-primary btn-sm">&nbsp;&nbsp;<i class="fa fa-flash fa-3x"></i>&nbsp;&nbsp;</button></td>
+<td align="center">Run Generator</td>
+<td align="left">Procedurally generate an object hierarchy, using a <a href="../../generation">generator</a> (respects <a href="../node#socket-fill-probability">socket fill probability settings</a>)</td>
+</tr>
+<tr>
+<td align="center"><button type="button" class="btn btn-warning btn-sm" style="background-color:#8e44ad;border-color:#8e44ad;"><i class="fa fa-random fa-3x" ></i></button></td>
+<td align="center">Fill All Sockets</td>
+<td align="left">Generates a plug for every available socket (ignores <a href="../node#socket-fill-probability">socket fill probability settings</a>)</td>
+</tr>
+<tr>
+<td align="center"><button type="button" class="btn btn-danger btn-sm"><i class="fa fa-eraser fa-3x"></i></button></td>
+<td align="center">Clear All Sockets</td>
+<td align="left">Clear all sockets, destroy all plug objects, and reset the object hierarchy.</td>
+</tr>
+</tbody>
+</table>
+<h4 id="generation-seed">Generation Seed</h4>
+<p>All Smithy <a href="#../generation#random-seed">generators</a> can take a an <code>int</code> value as a <a href="https://en.wikipedia.org/wiki/Random_seed">random seed</a>. Generations with a random seed with always produce the same output given the same inputs. Because Editor and runtime generators operate identically, seeds found in the object assembler and passed to runtime generators will generate the same output.</p>
+<p>However, new inputs like more or fewer available plugs will "break" known seeds. That is, the same seed operating over two distinct selection sets will not produce identical results. If seed values are an important part of your project, it's best to only set seeds once all assets and adapters are locked in.</p>
+<h4 id="save-as-fixed-object">Save As Fixed Object</h4>
+<p>The object assembler can also save out object hierarchies stripped of all Smithy interfaces ("fixed"). Clicking the <button type="button" class="btn btn-primary btn-sm"><i class="fa fa-save fa-lg"></i></button> at the bottom of the object assembler panel will save a modified copy of the object heirarchy as a prefab.</p>
+<p>The prefab will not include any Smithy adapters or nodes, but it will still have the same GameObject parent/child relationships.</p>
+<p>This is useful if your project can make use of Smithy's rapid assembly functions, but has no real need for runtime procedural generation.</p></div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            
+                <center>2016 Evil Wizard Studios</center>
+            
+            <center>Documentation built with <a href="http://www.mkdocs.org/">MkDocs</a>.</center>
+        </footer>
+
+        <script src="../../js/jquery-1.10.2.min.js"></script>
+        <script src="../../js/bootstrap-3.0.3.min.js"></script>
+        <script src="../../js/highlight.pack.js"></script>
+        <script src="../../js/base.js"></script>
+    </body>
+</html>

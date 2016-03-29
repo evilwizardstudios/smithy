@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        <meta name="author" content="Evil Wizard Studios">
+        
+        <link rel="shortcut icon" href="../img/favicon.ico">
+
+	<title>Generation API - Smithy Documentation</title>
+
+        <link href="../css/bootstrap-custom.min.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+        <link rel="stylesheet" href="../css/highlight.css">
+        <link href="../css/base.css" rel="stylesheet">
+
+        <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!--[if lt IE 9]>
+            <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+            <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+        <![endif]-->
+
+        
+    </head>
+
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+    <div class="container">
+
+        <!-- Collapsed navigation -->
+        <div class="navbar-header">
+            <!-- Expander button -->
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+
+            <!-- Main title -->
+            <a class="navbar-brand" href="..">Smithy Documentation</a>
+        </div>
+
+        <!-- Expanded navigation -->
+        <div class="navbar-collapse collapse">
+            <!-- Main navigation -->
+            <ul class="nav navbar-nav">
+            
+            
+                <li >
+                    <a href="..">Home</a>
+                </li>
+            
+            
+            
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Demos and Tutorials <b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                    
+                        <li >
+                            <a href="../demos_tutorials/quick_start/">Quick Start</a>
+                        </li>
+                    
+                        <li >
+                            <a href="../demos_tutorials/swamp_tile/">Strategy Game Tile</a>
+                        </li>
+                    
+                        <li >
+                            <a href="../demos_tutorials/fps_arsenal/">FPS Arsenal</a>
+                        </li>
+                    
+                        <li >
+                            <a href="../demos_tutorials/rpg_hero/">RPG Hero</a>
+                        </li>
+                    
+                    </ul>
+                </li>
+            
+            
+            
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Editor <b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                    
+                        <li >
+                            <a href="../editor/adapter/">Adapters</a>
+                        </li>
+                    
+                        <li >
+                            <a href="../editor/node/">Nodes</a>
+                        </li>
+                    
+                        <li >
+                            <a href="../editor/manager/">Managers</a>
+                        </li>
+                    
+                    </ul>
+                </li>
+            
+            
+            
+                <li class="active">
+                    <a href="./">Generation API</a>
+                </li>
+            
+            
+            
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Edition-Specific <b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                    
+                        <li >
+                            <a href="../edition_specific/editions/">Editions Overview</a>
+                        </li>
+                    
+                        <li >
+                            <a href="../edition_specific/reader/">Reader</a>
+                        </li>
+                    
+                        <li >
+                            <a href="../edition_specific/exporter/">Exporter</a>
+                        </li>
+                    
+                        <li >
+                            <a href="../edition_specific/runtime_editor/">Runtime Editor</a>
+                        </li>
+                    
+                    </ul>
+                </li>
+            
+            
+            
+                <li >
+                    <a href="../troubleshooting/">Troubleshooting</a>
+                </li>
+            
+            
+            </ul>
+
+            <!-- Search, Navigation and Repo links -->
+            <ul class="nav navbar-nav navbar-right">
+                <li >
+                    <a rel="next" href="../editor/manager/">
+                        <i class="fa fa-arrow-left"></i> Previous
+                    </a>
+                </li>
+                <li >
+                    <a rel="prev" href="../edition_specific/editions/">
+                        Next <i class="fa fa-arrow-right"></i>
+                    </a>
+                </li>
+                
+            </ul>
+        </div>
+    </div>
+</div>
+
+        <div class="container">
+            <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
+    <ul class="nav bs-sidenav">
+    
+        <li class="main active"><a href="#overview">Overview</a></li>
+        
+    
+        <li class="main "><a href="#generator-class">Generator Class</a></li>
+        
+    
+        <li class="main "><a href="#parameters">Parameters</a></li>
+        
+            <li><a href="#random-seed">Random Seed</a></li>
+        
+            <li><a href="#resource-paths">Resource Paths</a></li>
+        
+            <li><a href="#generation-options">Generation Options</a></li>
+        
+    
+        <li class="main "><a href="#methods">Methods</a></li>
+        
+            <li><a href="#generate">Generate</a></li>
+        
+            <li><a href="#include">Include</a></li>
+        
+            <li><a href="#exclude">Exclude</a></li>
+        
+            <li><a href="#set-depth">Set Depth</a></li>
+        
+    
+    </ul>
+</div></div>
+            <div class="col-md-9" role="main">
+
+<h1 id="overview">Overview</h1>
+<p>Smithy uses Generator objects to procedurally generate object hierarchies, both in the
+  Editor <a href="../editor/adapter#object-assembler-panel">Object Assembler</a> and at runtime.
+  When Generators are instanced, they build a reference collection of <a href="../editor/node#plugs"><i class="fa fa-plug"></i> <b>Plug Nodes</b></a> . When needed, Generators are passed one or more GameObjects. The Generator then searches this object for <a href="../editor/node#sockets"><i class="fa fa-plus-square"></i> <b>Socket Nodes</b></a>.</p>
+<p>If any are found, the Generator finds <a href="../editor/node#plugs"><i class="fa fa-plug"></i> <b>Plug Nodes</b></a>  that share <a href="../editor/node#tags"><i class="fa fa-tags"></i> <b>Tags</b></a> with the Socket Node. The Generator will then make a selection from these Plugs, based on <a href="../editor/node#plug-weight">selection weight</a>. The selected Plug's GameObject is instantiated as a child of the Socket object, and the Plug and Socket are <a href="../editor/node#rotation">aligned</a> and <a href="../editor/node#position">connected</a> in world space.</p>
+<p>The Generator then checks the instanced Plug object for Sockets as well. If any are found, the process begins again, as long as the initial Socket object is still above its <a href="../editor/adapter#generation-depth">maximum generation depth</a>.</p>
+<h1 id="generator-class">Generator Class</h1>
+<hr />
+<pre><code>public class Generator(IEnumerable&lt;string&gt; resourcePaths, int seed)
+</code></pre>
+
+<hr />
+<p>The runtime Generator class is named <code>Generator</code>, and is the only class that actually handles the recursive procedural generation routine. Generators are objects, instanced like so:</p>
+<pre><code>Generator myGenerator = new Generator();
+</code></pre>
+
+<p>This will instantiate a new Generator object with an unseeded Random provider, and will create a plug reference collection of <strong>all</strong> Smithy-enabled objects in the <em>Resources</em> folder. These properties can be changed by supplying the following parameters:</p>
+<h1 id="parameters">Parameters</h1>
+<h2 id="random-seed">Random Seed</h2>
+<p>Generators can be provided with an <code>int</code> value as a <a href="https://en.wikipedia.org/wiki/Random_seed">random seed</a>. Generators that share the same seed and operating with the same inputs will generate consistent results every time.</p>
+<pre><code>int mySeedValue = 42;
+var myGenerator = new Generator(mySeedValue);
+</code></pre>
+
+<p>Seeds can be set and tested in the <a href="../editor/adapter#generation-seed">Editor Object Assembler</a>.</p>
+<p>A seed value of 0 will result in an unseeded Random generator.</p>
+<h2 id="resource-paths">Resource Paths</h2>
+<p>By default, Generators reference every Smithy-enabled object in a project's <em>Resources</em> folder. However, Generators can also be passed an <code>IEnumerable&lt;string&gt;</code> collection. These strings are paths relative to the <em>Resources</em> folder of your Unity project, and will limit the plug reference collection the Generator is able to create:</p>
+<pre><code>var resourcePaths = new[]{&quot;/Level1/A&quot;, &quot;/Level1/B&quot;, &quot;/Level1/C&quot;};
+var myGenerator = new Generator(resourcePaths);
+</code></pre>
+
+<p>In the example above, the Generator will <strong>only</strong> look for <a href="../editor/node#plugs"><i class="fa fa-plug"></i><b>Plug Nodes</b></a>  from the <em>Resources/Level1/A</em>, <em>Resources/Level1/B</em>, and <em>Resources/Level1/C</em> folders. This is useful in limiting the scope of objects that can be generated, as well as increasing generation performance.</p>
+<h2 id="generation-options">Generation Options</h2>
+<p>Generators can be passed an array of <code>GenerationOption[]</code>, that modify the Generator's behavior. These options will affect every <code>Generate</code> call the Generator makes. These same options can be passed on a <a href="#generate">per-call basis</a>.</p>
+<h3 id="generationoptionsdisablejitter">GenerationOptions.DisableJitter</h3>
+<p>Prevent Node <a href="../editor/node#generation-jitter">jitter</a> from being applied on instantiation.</p>
+<h3 id="generationoptionsdisablematerialselection">GenerationOptions.DisableMaterialSelection</h3>
+<p>Prevent Node <a href="../editor/node#material-options">material selection</a> from being applied on instantiation. All Plug objects will instantiate with their default materials.</p>
+<h3 id="generationoptionsforcefillsockets">GenerationOptions.ForceFillSockets</h3>
+<p>Ignore Socket <a href="../editor/node#socket-probability">Fill Probability</a>. All sockets in the hierarchy will be filled with Plugs.</p>
+<h3 id="generationoptionsignoreselectionweight">GenerationOptions.IgnoreSelectionWeight</h3>
+<p>Ignore Plug <a href="../editor/node#plug-weight">Selection Weight</a>. All plugs will have an equal possibility of selection.</p>
+<p><div class="panel panel-default">
+    <div class="panel-body">
+    This can, in the case of very large selection sets, reduce the performance impact of generation. If your project has no use for weighted selections, you should always use this option.
+    </div>
+  </div></p>
+<h1 id="methods">Methods</h1>
+<h2 id="generate">Generate</h2>
+<hr />
+<pre><code>public GameObject Generate(GameObject baseGameObject)
+
+public GameObject Generate(GameObject baseGameObject, GenerationOptions[] options)
+</code></pre>
+
+<hr />
+<p>The Generator recursively instantiates a <code>GameObject</code> hierarchy, staring from the provided GameObject. It will continue until all <a href="../editor/node#sockets"><i class="fa fa-plus-square"></i><b>Socket Nodes</b></a> have been <a href="../editor/node#socket-probability">checked</a>, or, the hierarchy reaches its <a href="../editor/adapter#generation-depth">maximum generation depth</a>.</p>
+<p>This method returns a <code>GameObject</code>, an instance of the <code>baseGameObject</code> parameter. In most cases, <code>baseGameObject</code> will be a prefab, although any <code>GameObject</code> can be passed.</p>
+<pre><code>  var myGenerator = new Generator();
+  var myGameObject = Resources.Load&lt;GameObject&gt;(&quot;baseObject&quot;);
+
+  var myProceduralObject = myGenerator.Generate(myGameObject);
+</code></pre>
+
+<p>If the <code>GameObject</code> exists in the hierarchy, the Generator will not instantiate a new copy. Plugs will be generated for the extant copy.</p>
+<pre><code>public GameObject activeBaseObject;
+
+void Start()
+{
+  var myGenerator = new Generator();
+
+  myGenerator.Generate(activeBaseObject);     //This will still return a reference to &quot;activeBaseObject&quot;.
+}
+</code></pre>
+
+<p>Keep in mind that in most projects, creating a new generator <em>for each</em> <code>Generate</code> call is performance expensive, and is almost always unnecessary.</p>
+<p>Additionally, <code>Generate</code> can be passed an array of <code>GenerationOption[]</code> that operates in the same way the <a href="#generation-options">Generator instantiation parameter does</a>, but only over the single <code>Generate</code> call.</p>
+<h2 id="include">Include</h2>
+<hr />
+<pre><code>public void Include(IEnumerable&lt;GameObject&gt; includedAssets)
+</code></pre>
+
+<hr />
+<p>The Generator will search the supplied <code>IEnumerable&lt;GameObject&gt;</code> for <a href="../editor/node#plugs"><i class="fa fa-plug"></i><b>Plug Nodes</b></a> and add them the the Generator's Plug reference collection. Future Generate calls will also include these Plugs.</p>
+<pre><code>var morePlugs = GameObject.FindGameObjectsWithTag(&quot;Some_Tag&quot;);
+var myGenerator = new Generator(&quot;/Foo&quot;);
+
+myGenerator.Include(morePlugs);
+</code></pre>
+
+<h3 id="asset-bundles">Asset Bundles</h3>
+<p>AssetBundle Assets can be added to Generator selection sets by first loading the AssetBundle content then using <code>Include</code> to add it to the Generator. As Generators can't be created from AssetBundles, this is currently the only way to generate from bundled content.</p>
+<p>To build a Generator that selects from <strong>only</strong> AssetBundle Assets, first create a new Generator with a Resource Path parameter that leads to an empty <em>Resource</em> folder. Then, <code>Include</code> the loaded AssetBundle content, like so:</p>
+<pre><code>var myLoadedAssetBundle = AssetBundle.LoadFromFile(Path.Combine(Application.streamingAssetsPath, &quot;myassetBundle&quot;));
+
+var myLoadedAssets = myLoadedAssetBundle.LoadAllAssets&lt;GameObject&gt;;
+
+var myGenerator = new Generator(&quot;/EmptyFolder&quot;);
+myGenerator.Include(myLoadedAssets);
+</code></pre>
+
+<h2 id="exclude">Exclude</h2>
+<hr />
+<pre><code>public void Exclude(IEnumerable&lt;GameObject&gt; excludedAssets)
+</code></pre>
+
+<hr />
+<p>Any <a href="../editor/node#plugs"><i class="fa fa-plug"></i><b>Plug Nodes</b></a> in the <code>excludedAssets</code> collection will be removed from the Generator's Plug reference collection, if they exist.</p>
+<pre><code>var oldPlugs = GameObject.FindGameObjectsWithTag(&quot;Level1&quot;);
+
+myGenerator.Exclude(oldPlugs);
+</code></pre>
+
+<p><code>Exclude</code> is best used when managing Generators that operate over large reference collections, or very specific ones (such as selection sets based on achievements or player progress). Use <code>Exclude</code> when it would be overly difficult, performance-intensive, or time-consuming to instantiate a new Generator with the appropriate Plug reference collection.</p>
+<h2 id="set-depth">Set Depth</h2>
+<hr />
+<pre><code>public void SetDepth(int depth)
+</code></pre>
+
+<hr />
+<p>Sets the Generator's <a href="../editor/adapter#generation-depth">maximum generation depth</a> to the supplied <code>int</code>. Used when tying generation depth to a runtime-specific variable, or set of variables. Very useful in setting generation depth based on performance settings, for example.</p>
+<pre><code>int depth;
+
+if (Application.platform == RuntimePlatform.Windows)
+{
+  depth = 20;
+}
+else
+{
+  depth = 5;
+}
+
+var myGenerator = new Generator();  
+myGenerator.SetDepth(myDepth);
+</code></pre></div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            
+                <center>2016 Evil Wizard Studios</center>
+            
+            <center>Documentation built with <a href="http://www.mkdocs.org/">MkDocs</a>.</center>
+        </footer>
+
+        <script src="../js/jquery-1.10.2.min.js"></script>
+        <script src="../js/bootstrap-3.0.3.min.js"></script>
+        <script src="../js/highlight.pack.js"></script>
+        <script src="../js/base.js"></script>
+    </body>
+</html>

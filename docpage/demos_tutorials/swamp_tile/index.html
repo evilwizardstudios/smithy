@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        <meta name="author" content="Evil Wizard Studios">
+        
+        <link rel="shortcut icon" href="../../img/favicon.ico">
+
+	<title>Strategy Game Tile - Smithy Documentation</title>
+
+        <link href="../../css/bootstrap-custom.min.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+        <link rel="stylesheet" href="../../css/highlight.css">
+        <link href="../../css/base.css" rel="stylesheet">
+
+        <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!--[if lt IE 9]>
+            <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+            <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+        <![endif]-->
+
+        
+    </head>
+
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+    <div class="container">
+
+        <!-- Collapsed navigation -->
+        <div class="navbar-header">
+            <!-- Expander button -->
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+
+            <!-- Main title -->
+            <a class="navbar-brand" href="../..">Smithy Documentation</a>
+        </div>
+
+        <!-- Expanded navigation -->
+        <div class="navbar-collapse collapse">
+            <!-- Main navigation -->
+            <ul class="nav navbar-nav">
+            
+            
+                <li >
+                    <a href="../..">Home</a>
+                </li>
+            
+            
+            
+                <li class="dropdown active">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Demos and Tutorials <b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                    
+                        <li >
+                            <a href="../quick_start/">Quick Start</a>
+                        </li>
+                    
+                        <li class="active">
+                            <a href="./">Strategy Game Tile</a>
+                        </li>
+                    
+                        <li >
+                            <a href="../fps_arsenal/">FPS Arsenal</a>
+                        </li>
+                    
+                        <li >
+                            <a href="../rpg_hero/">RPG Hero</a>
+                        </li>
+                    
+                    </ul>
+                </li>
+            
+            
+            
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Editor <b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                    
+                        <li >
+                            <a href="../../editor/adapter/">Adapters</a>
+                        </li>
+                    
+                        <li >
+                            <a href="../../editor/node/">Nodes</a>
+                        </li>
+                    
+                        <li >
+                            <a href="../../editor/manager/">Managers</a>
+                        </li>
+                    
+                    </ul>
+                </li>
+            
+            
+            
+                <li >
+                    <a href="../../generation/">Generation API</a>
+                </li>
+            
+            
+            
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Edition-Specific <b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                    
+                        <li >
+                            <a href="../../edition_specific/editions/">Editions Overview</a>
+                        </li>
+                    
+                        <li >
+                            <a href="../../edition_specific/reader/">Reader</a>
+                        </li>
+                    
+                        <li >
+                            <a href="../../edition_specific/exporter/">Exporter</a>
+                        </li>
+                    
+                        <li >
+                            <a href="../../edition_specific/runtime_editor/">Runtime Editor</a>
+                        </li>
+                    
+                    </ul>
+                </li>
+            
+            
+            
+                <li >
+                    <a href="../../troubleshooting/">Troubleshooting</a>
+                </li>
+            
+            
+            </ul>
+
+            <!-- Search, Navigation and Repo links -->
+            <ul class="nav navbar-nav navbar-right">
+                <li >
+                    <a rel="next" href="../quick_start/">
+                        <i class="fa fa-arrow-left"></i> Previous
+                    </a>
+                </li>
+                <li >
+                    <a rel="prev" href="../fps_arsenal/">
+                        Next <i class="fa fa-arrow-right"></i>
+                    </a>
+                </li>
+                
+            </ul>
+        </div>
+    </div>
+</div>
+
+        <div class="container">
+            <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
+    <ul class="nav bs-sidenav">
+    
+        <li class="main active"><a href="#strategy-game-tile-tutorial">Strategy Game Tile Tutorial</a></li>
+        
+            <li><a href="#live-demo">Live Demo</a></li>
+        
+    
+        <li class="main "><a href="#introduction">Introduction</a></li>
+        
+    
+        <li class="main "><a href="#overview">Overview</a></li>
+        
+            <li><a href="#in-this-tutorial">In this Tutorial</a></li>
+        
+            <li><a href="#objectives">Objectives</a></li>
+        
+            <li><a href="#approach">Approach</a></li>
+        
+    
+        <li class="main "><a href="#walkthrough">Walkthrough</a></li>
+        
+            <li><a href="#setup">Setup</a></li>
+        
+            <li><a href="#base-tile">Base Tile</a></li>
+        
+            <li><a href="#terrain-i">Terrain I</a></li>
+        
+            <li><a href="#water">Water</a></li>
+        
+            <li><a href="#terrain-ii">Terrain II</a></li>
+        
+            <li><a href="#grass">Grass</a></li>
+        
+            <li><a href="#trees">Trees</a></li>
+        
+            <li><a href="#branches">Branches</a></li>
+        
+    
+    </ul>
+</div></div>
+            <div class="col-md-9" role="main">
+
+<h1 id="strategy-game-tile-tutorial">Strategy Game Tile Tutorial</h1>
+<h2 id="live-demo">Live Demo</h2>
+<h1 id="introduction">Introduction</h1>
+<p>In this tutorial we'll be using Smithy to procedurally generate swampland tiles for a strategy game.</p>
+<p>If you haven't yet, I recommend checking out the <a href="#./quick_start">Quick Start Tutorial</a> first. This tutorial builds off of some of the basics covered in the quick start.</p>
+<h1 id="overview">Overview</h1>
+<h2 id="in-this-tutorial">In this Tutorial</h2>
+<p>We will...</p>
+<ul>
+<li>Add multiple nodes and sockets to objects</li>
+<li>Customize the generation probability of plug objects</li>
+<li>Use jitter controls to create greater output variation</li>
+<li>Use node transform controls for refining plug object position, rotation, and scale</li>
+<li>Create a basic runtime interface</li>
+<li>Use built-in Unity functions to pull usable information from our GameObjects</li>
+</ul>
+<h2 id="objectives">Objectives</h2>
+<ul>
+<li>We want every generated tile to maintain a consistent visual style, but all generated tiles should look different.</li>
+<li>We want a portion of the tiles to generate with ancient ruins.</li>
+<li>The ruins, too, should be consistent but unique.</li>
+<li>We want our game to easily recognize if the swamp tile contains ruins or not.</li>
+</ul>
+<h2 id="approach">Approach</h2>
+<p>Smithy is unlike any built-in Unity tool, and requires a slightly different perspective on asset creation and management,
+  especially if Smithy is your first foray into procedural generation. We'll save ourselves a lot of time and effort with just a little planning.</p>
+<p>An intuitive way to think about how Smithy handles assets is Lego, but backwards. If you buy a set, Lego supplies the pieces and the instructions.
+  Here, you supply the pieces and the instructions, and Smithy builds your set. Which is a roundabout way of saying that we have to consider <em>how</em> assets will first
+  together.</p>
+<p>In a real project you might start from a piece of concept artwork or artist's model, but because this is just a tutorial I've made a mockup from the <a href="#">actual assets we'll be using</a>:</p>
+<p><img alt="Mockup tile" src="../../img/demo01/mockup.png" /></p>
+<p>This is the kind of thing we're going for - swampy, half-submerged ruins. If we can consistently produce tiles like this, we'll consider our work a success. We just have to figure out
+  the best way to connect everything together. Smithy uses <a href="../../editor/node">Nodes</a> that <a href="../../editor/node#connection-vector">automatically align and arrange their parent transforms</a>. We define <a href="../../editor/node#socket">sockets</a>, into which connect <a href="../../editor/node#plug">plugs</a>. Let's explode this mockup to get a better idea of how our pieces connect together:</p>
+<p><img alt="Exploded mockup tile" src="../../img/demo01/mockup-exploded.png" /></p>
+<p>We can see here that our tiles are actually very straightforward and won't really require any complicated node structures.</p>
+<ul>
+<li>Branches connect to trees</li>
+<li>Trees, grass, ruins, and water connect to landscapes</li>
+<li>Landscapes connect to the tile base piece</li>
+</ul>
+<p>We could have made the landscape and the base piece one model, but separating them gives us additional options - like generating landscapes without the base piece, which we'll talk about in the <a href="#expansion">expansion section</a>.</p>
+<p>Anyway, we should now have a pretty good idea of how we'll need to lay out our nodes, so we can begin.</p>
+<h1 id="walkthrough">Walkthrough</h1>
+<h2 id="setup">Setup</h2>
+<p>Import the Smithy Unity Package from your hard drive or directly from the Unity Asset store.</p>
+<p>To quickly test that Smithy has loaded properly, press <span class="label label-default">CTRL</span> + <span class="label label-default">ALT</span> + <span class="label label-default">M</span> to open the Manager window. If it opens properly, Smithy has installed correctly. If it throws an error, delete the "Smithy" folder and reinstall.</p>
+<p>The assets for this walkthrough can be downloaded for free through the <a href="#">Unity Asset Store</a> or <a href="#">directly</a>. These assets are free to use, modify, and distribute (but not sell!) without attribution in any Unity project, Smithy-related or otherwise. Make sure these assets are located in a <em>Resources</em> folder.</p>
+<h2 id="base-tile">Base Tile</h2>
+<p>Let's start with our base and build upwards. This way, we can run test generations at each step of construction to make sure we're on the right track.</p>
+<p>Import the <strong>Base Tile</strong> prefab from the <em>Assets/Resources/Swamp Tile/Meshes</em> folder. The prefab will contain two meshes: "Earth &amp; Rocks" and "Lava". Assign matching materials in the <em>Assets/Resources/Swamp Tile/Materials</em> folder.</p>
+<p><img alt="A Prepared Base Piece" src="../../img/demo01/00.png" /></p>
+<p>In the <strong>Inspector</strong> tab, click <strong>Add New Component</strong> and select <strong>Smithy</strong><i class="fa fa-long-arrow-right"></i><strong>Add Smithy Adapter</strong>.</p>
+<p>The <a href="../../editor/adapter">adapter</a> will be added with two critical warnings. Ignore them for now (we'll deal with them shortly) and click the teal <strong>Node Editor</strong> button. In the node editor panel, select <strong>Add Node</strong>, <i class="success fa fa-plus-square"></i> (<strong>Socket Type</strong>), and <strong>Midpoint</strong>, like so:</p>
+<p><img alt="Node Palette Settings" src="../../img/demo01/01.png" /></p>
+<p>Now, in the <strong>Scene Tab</strong>, hover over the middle of the tile base model. You'll see a magenta dot handle. Click once to add a node:</p>
+<p><img alt="Adding a node" src="../../img/demo01/02.png" /></p>
+<p>This is the <a href="../../editor/node#socket">socket</a> node the landscapes will <a href="../../editor/node#socket">plug</a> in to. The <i class="success fa fa-plus-square"></i> icon marks it as a socket, and the little arrow is the <a href="../../editor/node#connection-vector">connection vector</a>, which will tell Smithy how to orient the plug - in our case, straight "down" on to the flat top of our tile base. Imagine a physical socket whose walls are oriented straight upwards. You'd plug something in from above, straight down. That's what we've got here.</p>
+<p>So, we have our socket. Now we need to tell Smithy what sort of socket it is.  </p>
+<p>Return to the <strong>Inspector Tab</strong> and look under the node palette to the layer list. <strong>Layer 0</strong> should be expanded, and contain a single node named "(0.0, 3.0, 0.0)", the socket we just placed. Click the <i class="fa fa-tag"></i> icon to the right of the name and the gear icon.</p>
+<p>The tag popup will appear. Click the <i class="fa fa-tag">+</i> icon and enter "Terrain" into the form. Next, click the green checkmark button to add the Terrain tag to our Unity project. It should appear in the left-hand tag panel under <strong>Available Tags</strong>. Click it to move it to <strong>Node Tags</strong>. The process should look like this:</p>
+<p><img alt="Adding the Terrain tag" src="../../img/demo01/03.gif" /></p>
+<p>What we've done is created a new tag, "Terrain", and assigned it to our Socket. This tells Smithy that the socket can accept Plugs that also carry the Terrain tag. However, there's nothing to plug in, because we don't have any "Terrain"-tagged Plugs. We don't have any plugs, period.</p>
+<p>Let's change that.</p>
+<p>Click the yellow <i class="fa fa-save">+</i> icon in the top-right corner of the Smithy Adapter component, and save the prefab to <em>Assets/Resources/Finished</em>.</p>
+<h2 id="terrain-i">Terrain I</h2>
+<p><strong>Disable</strong> the tile base in the <strong>Hierarchy Tab</strong>. This will let us work on the next piece more easily. Now add one of the terrain pieces in the <em>Assets/Resources/Swamp Tile/Meshes/Terrains</em> folder to the hierarchy. It doesn't matter which one, add whichever one looks good to you. Assign the "Land" Material to it.</p>
+<p>Click its GameObject in the Hierarchy Tab and add a Smithy Adapter by clicking <strong>Add New Component</strong> and select <strong>Smithy</strong><i class="fa fa-long-arrow-right"></i><strong>Add Smithy Adapter</strong>.</p>
+<p>In the Smithy Adapter Inspector, navigate to the <strong>Node Editor</strong> tab and make sure the node palette is set to <strong>Add Node</strong>, <i class="fa fa-plug"></i> (<strong>Plug Type</strong>), and <strong>Midpoint</strong>.</p>
+<p>Now, hold down <span class="label label-default">ALT</span> and click and drag in the Scene Tab to move the Scene View camera <em>under</em> the terrain. Move the mouse to the diagonal line that bisects the bottom of the object, and click. If you've done everything right, you'll see the following:</p>
+<p><img alt="Adding the Terrain plug" src="../../img/demo01/05.png" /></p>
+<p>We've added a plug node to the underside of the terrain, and we can see that the connection vector is angled straight down. Recall that our base piece's socket's connection vector is aligned straight up. When we generate pieces, terrains will be connected straight down to the base piece - exactly what we want.</p>
+<p>To quickly check how Smithy will align an object during generation, set the node palette to <strong>Edit Node</strong> and use the <i class="fa fa-hand-o-up"></i> (<strong>Select</strong>) <strong>Mode</strong> and click or hover over a node:</p>
+<p><img alt="Hovering over a node in Select Mode" src="../../img/demo01/06.png" /></p>
+<p>The wireframe box represents the direction, scale and orientation of the object, and the shaded face represents the object's facing <em>in relation to the node</em>. For this plug node, we can think of the shaded face as the prongs of the plug. Our plug node is oriented straight down, with no change to rotation and scale. It'll slot right in to our socket node.</p>
+<p>All we have to do to finish this node is add the "Terrain" tag, so Smithy knows that this plug is available for the "Terrain"-tagged socket we placed on the base piece.</p>
+<p>Find the node in Layer 0 and click the <i class="fa fa-tag"></i> button. The "Terrain" tag will already be in the Available Tags pane. Click it to add the tag to our plug node.</p>
+<p>Finally, click the yellow <i class="fa fa-save">+</i> icon in the top-right corner of the component, and save the prefab to <em>Assets/Resources/Finished/Terrain</em>.</p>
+<h3 id="test-generation-i">Test Generation I</h3>
+<p>We have a socket tagged "Terrain", and we have a plug tagged "Terrain". That's all we need to generate something in Smithy, so let's test it out and make sure we're on the right track.</p>
+<p>Double-check that the terrain piece has been saved through Smithy, then disable it in the hierarchy. Return to the base piece, and re-enable it.</p>
+<p>In the base piece's Smithy Adapter Inspector, click the orange <strong>Assembler</strong> button. Near the bottom of the panel, click either the blue <i class="fa fa-bolt"></i> (<strong>Run Generator</strong>) or purple <i class="fa fa-random"></i> (<strong>Fill All</strong>) buttons. You should see the following:</p>
+<p><img alt="First test generation" src="../../img/demo01/07.png" /></p>
+<p>The terrain should pop into existence right on top of our base piece. If it doesn't, double check that everything has been saved and is tagged appropriately.</p>
+<p>Now that we're sure we've got the basics working, we can begin decorating the terrain. Click the red <i class="fa fa-eraser"></i> (<strong>Clear All</strong>) button to remove the generated terrain object.</p>
+<h2 id="water">Water</h2>
+<p>Now, before we continue, let's think about the best way to implement our water. It'd be cool to have varying water levels, and maybe even some tiles completely dry, but we don't really care <em>which</em> tiles generate with water and which ones don't - we want these to be built procedurally, after all - but water would be appropriate for all terrain pieces.</p>
+<p>We <em>could</em> attach a water socket to each terrain piece we make, but that's work we don't need to do. Instead, let's add it to the base piece.</p>
+<h3 id="socket">Socket</h3>
+<p>The best spot to add the water socket would be in the same place as the terrain socket. Smithy allows overlapping sockets, but overlapping sockets can get confusing in the editor, without a little effort. Let's start naming our sockets so we know what is what.</p>
+<p>In the Smithy Adapter Inspector on the base piece, click the <i class="fa fa-gear"></i> (<strong>Node Settings</strong>) button. The <a href="../../editor/node#node-settings-window">Node Settings Window</a> will appear. Next to the plug symbol in the top left of the window is a small grey <i class="fa fa-pencil"></i> icon. Click this and change the name from <strong>(0.0, 3.0, 0.0)</strong> to <strong>Terrain</strong>.</p>
+<p><img alt="Setting a node name" src="../../img/demo01/08.gif" /></p>
+<p>Click the green checkmark button on the bottom of the window to close it, and take a look at the node palette in the Adapter inspector. Make sure that the palette is set to  <strong>Add Node</strong>, <i class="fa fa-plus-square"></i> (<strong>Socket Type</strong>), and <strong>Midpoint</strong>.</p>
+<p>In the Scene View tab, click on the "Terrain" node on the top of the base piece. The scene view won't change, but a new node named <strong>"(0.0, 3.0, 0.0)</strong> will appear in the Layer 0 list.</p>
+<p>Repeat the renaming process and change the name of this new node to <strong>"Water"</strong>.</p>
+<p>Click the <i class="fa fa-tag"></i> button and add a new tag: "Water". Then, click the "Water" tag in the Available Tags panel to add it to the node. The tag popup for the water socket should look like this:</p>
+<p><img alt="Water node tags" src="../../img/demo01/09.png" /></p>
+<p>Recall that we want the water to be generated sometimes, but not all of the time. We can set that up pretty quickly.</p>
+<p>Click the blue <i class="fa fa-pie-chart"></i> button to the right of the node tag panel button. Use a <a href="../../editor/adapter#preset">preset</a> or drag the slider to a percentage that seems suitable. For this tutorial, I've set the node to around 88%.</p>
+<p><img alt="Water generation chance" src="../../img/demo01/10.png" /></p>
+<p>This means that the node will be filled 88% of the time. If we generate 10 tiles, we can expect about nine of them to be wet.</p>
+<p>Now, click the <em>green</em> <i class="fa fa-save"></i> icon in the top-right corner of the Adapter component to commit our changes to the prefab, and disable the base piece object in the hierarchy so we can work in a clean scene view.</p>
+<h3 id="plug">Plug</h3>
+<p>It's time to set up our water object. Head into the <em>Assets/Resources/Swamp Tile/Meshes</em> folder and put the Water model into the scene. Assign its material and add a Smithy Adapter component.</p>
+<p>Exactly the same way we added the plug to the terrain, spin the Scene View camera around to the flat underside of the water object and <strong>Add</strong> a <i class="fa fa-plug"></i> (<strong>Plug</strong>) to the <strong>Midpoint</strong> of the diagonal that bisects the underside, like so:</p>
+<p><img alt="Water plug" src="../../img/demo01/11.png" /></p>
+<p>Use the tag panel to add the "Water" tag to this plug. Save the prefab to <em>Assets/Resources/Finished/Terrain</em></p>
+<h3 id="jitter">Jitter</h3>
+<p>Our generated tiles are going to look a lot less dynamic if tile that spawns with water has the same water level. To help with that, Smithy comes with jitter controls.</p>
+<p><a href="../../editor/node#jitter">Jitter</a> controls are random vectors applied to an object's position, rotation, and scale on generation. We can use a Y-scale jitter to stretch the water object's mesh, controlling our water level.</p>
+<p>Open the <strong>Node Settings Window</strong> by clicking on the <i class="fa fa-gear"></i> button next to the node's name (actually its position, right now). Scroll down to the jitter panel, which is marked with a purple <i class="fa fa-bullseye"></i> icon.</p>
+<p>Click the <i class="fa fa-plus"></i> button on the right side of the panel to add a new jitter control. Select <strong>Scale Jitter (Vector)</strong> from the drop-up menu. This will let us isolate the Y-axis - a uniform jitter would scale in all dimensions equally.</p>
+<p><img alt="Adding Scale Jitter" src="../../img/demo01/12.png" /></p>
+<p>For now, let's zero out the X- and Z-axis sliders. We only want to scale the Y-axis.</p>
+<p>Drag the X- and Z-axis sliders to the middle. This sets their minimum and maximum range to 0. Set the Y-axis slider to values you think would look good (we'll check in a second). Don't set the minimum value below zero here, though, that will invert our water mesh.</p>
+<p>I decided to set the Y-axis values to -0.98 and 0.71 respectively:</p>
+<p><img alt="Setting Scale Jitter" src="../../img/demo01/13.png" /></p>
+<p>When you're happy with your jitter range, click the green check mark to commit all changes to the node, then return to the Adapter inspector and click the green <i class="fa fa-save"></i> icon in the top-right corner. Go ahead and disable or delete the Water GameObject in the Hierarchy Tab.</p>
+<h3 id="test-generation-ii">Test Generation II</h3>
+<p>Re-enable the base piece in the Hierarchy. In the Adapter Inspector, click the orange <strong>Assembler</strong> tab. Click the blue <i class="fa fa-bolt"></i> (<strong>Run Generator</strong>) button a few times. Here's a sample of what you should see:</p>
+<p><img alt="Sample Test Generations #2" src="../../img/demo01/14.gif" /></p>
+<p>You should see the landscape being flooded most of the time, at varying water levels. Sometimes, however, they'll be no water at all. Here's what's happening:</p>
+<ul>
+<li>The base piece is generating a landscape 100% of the time.</li>
+<li>The base piece is (more or less) rolling some dice to see if it should generate a water object.<ul>
+<li>If so:</li>
+<li>the water object is being scaled along the Y-axis, then...</li>
+<li>connected to the socket on the base piece.</li>
+</ul>
+</li>
+</ul>
+<p>Click the button a few more times to make sure it's looking good, and adjust the water socket generation probability and water plug's jitter values to taste.</p>
+<p>When you're done, click the red <i class="fa fa-eraser"></i> (<strong>Clear All</strong>) button and disable the base piece in the Hierarchy Tab.</p>
+<h2 id="terrain-ii">Terrain II</h2>
+<p>Re-enable or instantiate the Terrain piece from earlier.</p>
+<p>Now, click the blue <i class="fa fa-clone">+</i> button at the bottom of the Adapter inspector to add a new node layer to this adapter.</p>
+<p>A new layer, titled <strong>Layer 1</strong> will appear under Layer 0. You'll notice that Layer 0 has turned dark blue, and Layer 1 is now teal. This means that Layer 1 is the <em>active layer</em>. If we add any nodes now, they'll get placed in Layer 1. To switch active layers, click the layer's name (but don't do that now).</p>
+<p>Click the light blue <i class="fa fa-gear"></i> icon to the right of Layer 1. This opens the Layer Settings Window.</p>
+<p>You'll see that there are no nodes present in the layer right now. That's fine, we'll get to that shortly. For now, click the grey <i class="fa fa-pencil"></i> to change the layer's name (just like the Node Settings Window) from "Layer 1" to <strong>"Grass"</strong>, then commit the changes to the Adapter and close the window. Your layer list should look like this:</p>
+<p><img alt="Grass Layer Added" src="../../img/demo01/15.png" /></p>
+<p>Go to the Node Palette and set <strong>Add</strong> a <i class="fa fa-plus-square"></i> (<strong>Socket</strong>) and <strong>Off</strong>. Ensure that the new "Grass" layer is active.</p>
+<p>Now, in the Scene View Tab, add a handful of nodes where you'd like grass to grow:</p>
+<p><img alt="Grass Nodes Added" src="../../img/demo01/16.png" /></p>
+<p>I ended up adding 16 grass nodes. You can add as many as you like -- because grass won't have a sub-object hierarchy, we don't really have to worry about adding generational complexity. If the big list of nodes in the inspector bothers you, click the caret to collapse the node list. We actually won't be touching the nodes individually. Instead we'll set up everything at once using the Layer Settings Window.</p>
+<h3 id="grass-layer-settings">Grass Layer Settings</h3>
+<p>Click the blue <i class="fa fa-clone">+</i> grass layer settings button again. You'll notice that now, the window has been populated with all of the nodes we just added:</p>
+<p><img alt="Grass Layer Settings" src="../../img/demo01/17.png" /></p>
+<p>Click the blue <strong>Select All</strong> button in the lower left side to select all of our grass sockets. You'll notice immediately that the right column of the window turns into a control panel very similar to the Node Settings Window.</p>
+<p>The first row of X/Y/Z values will change the position of the node. Set the Y-value to -0.05 and click the green check mark to move all selected nodes by this value.</p>
+<p>Why? Well because we want our grass models to look like they're part of the scene, and we'll be putting our plug nodes right on the bottom of the grass mesh. If we kept the nodes on the surface of our Terrain piece, they'd look like they were almost floating - just <em>baaarely</em> touching the ground. It'd look weird. Getting them down in the ground just a little bit will look way more natural.</p>
+<p>Close (or move aside) the Layer Window. Your terrain piece should look like this:</p>
+<p><img alt="Offset Grass Nodes" src="../../img/demo01/18.png" /></p>
+<p>The node icons are transparent because they're within the object mesh. This is what we want.</p>
+<p>You might have noticed, when placing nodes, that the node's <a href="../../editor/node#connection-vector">connection vectors</a> are reflections of the normal the node is placed against. Most of the time, this is what you want -- flat surfaces will sit flush with each other. However, we're laying the sockets for grass. Grass grows towards the sun, and if our grass is growing everywhere at odd angles it's going to look like fur or something, not grass. We need these connection vectors to be oriented straight up.</p>
+<p>Open up the Layer Settings Window again, if you've closed it. <strong>Select All</strong> once again.</p>
+<p>The fourth row down, the <i class="fa fa-external-link-square"></i> icon, will quick-set all connection vectors. Click the first button, the <i class="fa fa-arrow-up"></i> button, which sets all connection vectors to <strong>world up</strong>.</p>
+<p>Just below that in the layer window is the probability selector. Press the blue <i class="fa fa-star-o"></i> (<strong>Uncommon</strong>) button. This will prevent all of our grasses from spawning every time, making the finished tiles look far more organic. The Uncommon setting is set to 60% by default, but this can be changed in the <a href="../../editor/manager#probabilty-preset-manager">probability preset manager</a>.</p>
+<p>Below probability is the Tag panel. Like before, click the <i class="fa fa-tag">+</i> button and add the tag "Grass". Click the new tag in the Available Tags column to add it to all of the selected nodes.</p>
+<p>Finally, we're going to mass-add jitter values. The Jitter panel is below the tag panel. Click the <i class="fa fa-plus"></i> button to add a <strong>Rotation Jitter</strong>, and again to add a <strong>Vector Scale Jitter</strong></p>
+<p>We only want the grass to be able to rotate around their Y-axes, but we don't need any limits on how much they can rotate. In the Rotation Jitter control, zero out the X- and Z- axes, and max out (-180 to 180) the Y axis.</p>
+<p>In the Vector Scale Jitter control, set all axes to a similar, small value to add a little variation to how our grass will grow. I chose -0.30 and 0.30, for each axis.</p>
+<p><img alt="Grass Jitter" src="../../img/demo01/19.png" /></p>
+<p>Click the purple <i class="fa fa-mail-forward"></i> button to copy this jitter control to all selected nodes. Exit the menu, and save changes in the adapter inspector. Disable the terrain in the hierarchy so we have an empty scene view to work in.</p>
+<h2 id="grass">Grass</h2>
+<p>Go to the <em>Assets/Resources/Swamp Tile/Meshes/Grass</em> folder and drag "Grass A" into the heirarchy. Apply the "Moss" material. Add a Smithy Adapter component.</p>
+<p>In the Node Editor tab, make sure that the palette is set to <strong>"Add Node"</strong> and <strong>"Plug"</strong>. Instead of adding a node through the viewport, click the <i class="fa-chain-broken">+</i> button to add a new, unanchored node. The node should appear at (0,0,0) like so:</p>
+<p><img alt="Grass Plug" src="../../img/demo01/20.png" /></p>
+<p>Now, switch the node palette to <strong>Edit Node</strong> / <strong>Select</strong> mode, and click the node in the Scene View. It'll turn bright green. You'll notice the connection vector is pointed directly up - we don't want this. Our grasses will instantiate upside down.</p>
+<p>To fix this, click the final palette option, the <i class="fa fa-external-link-square"></i> (<strong>Adjust Connection Vector</strong>) button.</p>
+<p>Now, click the downward arrow in the snap menu to set the connection vector to <strong>world down</strong>. You should see this:</p>
+<p><img alt="Grass Plug, Oriented" src="../../img/demo01/21.png" /></p>
+<p>Add the "Grass" tag to the node, using the <i class="fa fa-tag"></i> button.</p>
+<h3 id="copying-adapters">Copying Adapters</h3>
+<p>Don't delete or disable the grass GameObject in the hierarchy. Instead, select and drag all of the remaining grasses from the <em>Meshes/Grass</em> folder into the hierarchy, and assign the Moss material to them. You can do this easily by selecting all of the grasses in the Hierarchy Tab and dragging the Moss material into the Inspector Tab.</p>
+<p>Now, select only "Grass A", the one with the Smithy Adapter on it. Right click on the very top of the Smithy Adapter Inspector and click <strong>"Copy Component"</strong>:</p>
+<p><img alt="Copy Component" src="../../img/demo01/22.png" /></p>
+<p>Group select the <strong>other</strong> grass objects (grasses B through F). Right-click on the Transform component and select <strong>Paste Component As New"</strong>:</p>
+<p><img alt="Paste Component As New" src="../../img/demo01/23.png" /></p>
+<p>This will copy the Smithy adapter, along with our plug node, to each Grass object. This saved us a bunch of time, and is something to definitely remember whenever preparing a bunch of assets that are going to be handled the same way.</p>
+<p>Save <strong>each</strong> grass object to prefab, through the Smithy adapter, then remove them from the heirarchy.</p>
+<h3 id="test-generation-iii">Test Generation III</h3>
+<p>Go back to the base piece and run the Assembler generator a few times:</p>
+<p><img alt="Test Generation 3" src="../../img/demo01/24.gif" /></p>
+<p>If everything looks good, click the red <i class="fa fa-eraser"></i> (<strong>Clear All</strong>) button and disable the base piece.</p>
+<h2 id="trees">Trees</h2>
+<h3 id="sockets">Sockets</h3>
+<p>We're going to repeat the grass process with the trees.</p>
+<p>Activate Terrain A in the hierarchy and add a new node layer, named "Trees". Add a few socket nodes, wherever you think is suitable (Click the <i class="fa fa-eye"></i> button on the inactive layer to hide the other layers and reduce visual clutter). These trees have pretty wide root systems, though, so it's best to keep them away from the edges.</p>
+<p><img alt="Adding Trees" src="../../img/demo01/25.png" /></p>
+<p>Now, select all of these sockets in their layer window. Use the techniques we've covered in the last several steps to do the following:</p>
+<ul>
+<li>Add a Y-axis position offset like we did with the grass, but decrease the value to -0.1</li>
+<li>Set all connection vectors to <strong>world up</strong> by clicking the upwards-facing arrow in the connection vector settings panel</li>
+<li>Create a new tag, "Tree", and add it to the sockets</li>
+<li>Set the probability to <i class="fa fa-star-o"></i> (<strong>Rare</strong>)</li>
+<li>Apply a Y-axis rotation jitter control with limits at -180 degrees and +180 degrees.</li>
+<li>Close the Layer Settings Window and save through the adapter.</li>
+</ul>
+<h3 id="plugs">Plugs</h3>
+<p>Again, like with the grass, we're going to batch all of our tree objects by defining the plug node on one tree and copying the adapter to the other trees.</p>
+<p>Pull all of the tree meshes from the <em>Meshes/Trees</em> folder into the hierarchy. Apply the "Wood" material to them.</p>
+<p>Now, select Tree A, and:</p>
+<ul>
+<li>Add a new unanchored node with the <i class="fa fa-chain-broken">+</i> button</li>
+<li>Select the node through the palette's <strong>Edit Node</strong> / <strong>Select</strong> mode.</li>
+<li>Click the downward-facing arrow in the <i class="fa fa-external-link-square"></i> (<strong>Adjust Connection Vector</strong>) snap menu to set the connection vector to <strong>world down</strong></li>
+<li>Use the Tag Panel to add the "Tree" tag to the node.</li>
+<li>Right-click on the Smithy Adapter inspector title and select "Copy Component"</li>
+<li>Shift-select and paste the component to the rest of the tree objects.</li>
+</ul>
+<p>Save each of the trees through the Smithy adapter to the <em>Finished</em> folder. Remove them from the hierarchy, and check your work by using the Assembler generator on the base piece. It should generate something like this:</p>
+<p><img alt="Checking Trees" src="../../img/demo01/26.png" /></p>
+<p>If it looks a little off, don't worry. We'll take a final pass near the end and tweak everything to get it perfect. For now, make sure that trees don't have roots hanging off of the edge. If they do, go back into the Terrain A Tree nodes and move them towards the center.</p>
+<h2 id="branches">Branches</h2>
+<p>[[[CHANGE THIS -- ALIGN ALL BASES WITH y 0]]]</p>
+<p>This part, unfortunately, can't be batched. The good news is that there are only four, and they'll add a ton of variety.</p>
+<p>Go into the <em>Meshes/Trees/Branches</em> folder and grab "Branch A". Assign the "Wood" material and add a Smithy Adapter.</p>
+<p>Rotate the branch so you can see the base. You'll notice the branch seems to "clip out" back here because there's no geometry in that area. This is fine, because we're going to manually position the plug node.</p>
+<p>Enter edit mode and keep the palette at default settings. Click one of the vertices near the base of the branch:</p>
+<p><img alt="Adding the branch plug" src="../../img/demo01/27.png" /></p>
+<p>Neither the position nor the connection vector of the node is what we want. Let's change that.</p>
+<p>Enter the <strong>Edit Node</strong> mode from the palette and click the node in the Scene View to select it.</p>
+<p>Now, click the <i class="fa fa-arrows"></i> button in the palette. In the Scene view, manipulate the movement handles to position the node roughly in the middle of the branch's base. Then, inset the node just a little into the body of the branch, like so:</p>
+<p><img alt="Positioning the branch plug" src="../../img/demo01/28.png" /></p>
+<p>Finally, click the button labeled "C" (<strong>"Align to Object Center"</strong>) arrow in the <i class="fa fa-external-link-square"></i> (<strong>Adjust Connection Vector</strong>) snap menu. You might also want to tweak the connection vector manually, depending on how you positioned the node. In the end, the vector should look like this:</p>
+<p><img alt="Aligning the branch vector" src="../../img/demo01/29.png" /></p>
+<p>Add a new tag, "Branch", and save this branch as a prefab through the Smithy Adapter.</p>
+<p>Now, repeat this process for the rest of the branches in the <em>Meshes/Trees/Branches</em> folder.</p></div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            
+                <center>2016 Evil Wizard Studios</center>
+            
+            <center>Documentation built with <a href="http://www.mkdocs.org/">MkDocs</a>.</center>
+        </footer>
+
+        <script src="../../js/jquery-1.10.2.min.js"></script>
+        <script src="../../js/bootstrap-3.0.3.min.js"></script>
+        <script src="../../js/highlight.pack.js"></script>
+        <script src="../../js/base.js"></script>
+    </body>
+</html>

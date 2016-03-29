@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        <meta name="author" content="Evil Wizard Studios">
+        
+        <link rel="shortcut icon" href="../../img/favicon.ico">
+
+	<title>Nodes - Smithy Documentation</title>
+
+        <link href="../../css/bootstrap-custom.min.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+        <link rel="stylesheet" href="../../css/highlight.css">
+        <link href="../../css/base.css" rel="stylesheet">
+
+        <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!--[if lt IE 9]>
+            <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+            <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+        <![endif]-->
+
+        
+    </head>
+
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+    <div class="container">
+
+        <!-- Collapsed navigation -->
+        <div class="navbar-header">
+            <!-- Expander button -->
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+
+            <!-- Main title -->
+            <a class="navbar-brand" href="../..">Smithy Documentation</a>
+        </div>
+
+        <!-- Expanded navigation -->
+        <div class="navbar-collapse collapse">
+            <!-- Main navigation -->
+            <ul class="nav navbar-nav">
+            
+            
+                <li >
+                    <a href="../..">Home</a>
+                </li>
+            
+            
+            
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Demos and Tutorials <b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                    
+                        <li >
+                            <a href="../../demos_tutorials/quick_start/">Quick Start</a>
+                        </li>
+                    
+                        <li >
+                            <a href="../../demos_tutorials/swamp_tile/">Strategy Game Tile</a>
+                        </li>
+                    
+                        <li >
+                            <a href="../../demos_tutorials/fps_arsenal/">FPS Arsenal</a>
+                        </li>
+                    
+                        <li >
+                            <a href="../../demos_tutorials/rpg_hero/">RPG Hero</a>
+                        </li>
+                    
+                    </ul>
+                </li>
+            
+            
+            
+                <li class="dropdown active">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Editor <b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                    
+                        <li >
+                            <a href="../adapter/">Adapters</a>
+                        </li>
+                    
+                        <li class="active">
+                            <a href="./">Nodes</a>
+                        </li>
+                    
+                        <li >
+                            <a href="../manager/">Managers</a>
+                        </li>
+                    
+                    </ul>
+                </li>
+            
+            
+            
+                <li >
+                    <a href="../../generation/">Generation API</a>
+                </li>
+            
+            
+            
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Edition-Specific <b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                    
+                        <li >
+                            <a href="../../edition_specific/editions/">Editions Overview</a>
+                        </li>
+                    
+                        <li >
+                            <a href="../../edition_specific/reader/">Reader</a>
+                        </li>
+                    
+                        <li >
+                            <a href="../../edition_specific/exporter/">Exporter</a>
+                        </li>
+                    
+                        <li >
+                            <a href="../../edition_specific/runtime_editor/">Runtime Editor</a>
+                        </li>
+                    
+                    </ul>
+                </li>
+            
+            
+            
+                <li >
+                    <a href="../../troubleshooting/">Troubleshooting</a>
+                </li>
+            
+            
+            </ul>
+
+            <!-- Search, Navigation and Repo links -->
+            <ul class="nav navbar-nav navbar-right">
+                <li >
+                    <a rel="next" href="../adapter/">
+                        <i class="fa fa-arrow-left"></i> Previous
+                    </a>
+                </li>
+                <li >
+                    <a rel="prev" href="../manager/">
+                        Next <i class="fa fa-arrow-right"></i>
+                    </a>
+                </li>
+                
+            </ul>
+        </div>
+    </div>
+</div>
+
+        <div class="container">
+            <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
+    <ul class="nav bs-sidenav">
+    
+        <li class="main active"><a href="#overview">Overview</a></li>
+        
+            <li><a href="#type">Type</a></li>
+        
+            <li><a href="#tags">Tags</a></li>
+        
+            <li><a href="#generation-probability">Generation Probability</a></li>
+        
+    
+        <li class="main "><a href="#node-settings-window">Node Settings Window</a></li>
+        
+            <li><a href="#name">Name</a></li>
+        
+            <li><a href="#position">Position</a></li>
+        
+            <li><a href="#rotation">Rotation</a></li>
+        
+            <li><a href="#scale">Scale</a></li>
+        
+            <li><a href="#connection-vector">Connection Vector</a></li>
+        
+            <li><a href="#tag-manager">Tag Manager</a></li>
+        
+            <li><a href="#probability-settings">Probability Settings</a></li>
+        
+            <li><a href="#generation-jitter">Generation Jitter</a></li>
+        
+            <li><a href="#material-options">Material Options</a></li>
+        
+    
+    </ul>
+</div></div>
+            <div class="col-md-9" role="main">
+
+<h1 id="overview">Overview</h1>
+<p>Nodes are the "connection points" that Smithy uses to assemble GameObjects into new hierarchies. Multiple nodes can exist on a single adapter, and a Smithy-adapted GameObject might be host to one or hundreds of individual nodes, each with <a href="#node-settings-window">parameters</a> that control when and how they are used in <a href="../../generation">procedural generation</a></p>
+<h2 id="type">Type</h2>
+<p>There are two types of nodes: Plugs and Sockets.</p>
+<p>Plugs <em>attach to</em> Sockets, and Sockets <em>accept</em> plugs.</p>
+<h3 id="plugs">Plugs</h3>
+<p><button type="button" class="btn btn-info btn-sm" style="margin:0 auto; display:block;"><i class="fa fa-plug fa-4x"></i></button></p>
+<div class="well">
+  Plugs <i>plug in</i> to sockets. That's pretty much all you have to remember.
+</div>
+
+<p>Smithy actually largely ignores GameObjects during <a href="../../generation">generation</a>, and instead only searches plugs. This means that your Smithy-adapted prefabs won't be selected, but its plugs will, and the prefab will be instantiated to get the plug. Keep this in mind when creating assets and assigning weights. Multiple plugs on a single GameObject means multiple points of connection, but in terms of <em>that specific GameObject being selected</em> the weights are cumulative.</p>
+<p>In other words, a <strong>GameObject</strong> that has ten identical plugs of weight 2 has an effective total selection weight of 20.</p>
+<p>Realistically, this will be in issue only in some projects, and even then very rarely. Just keep this in mind if you want a GameObject with many plugs to generate only very rarely.</p>
+<h3 id="sockets">Sockets</h3>
+<p><button type="button" class="btn btn-success btn-sm" style="margin:0 auto; display:block;"><i class="fa fa-plus-square fa-4x"></i></button></p>
+<div class="well">
+  Sockets <i>accept</i> plugs, just like the ones you've got on your wall.
+</div>
+
+<p>You can have as many sockets as you want on a GameObject, but each socket can only hold one plug. However, plug objects themselves can hold other sockets (which can hold plugs). For more information, <a href="../../generation">consult the generation page</a>.</p>
+<h2 id="tags">Tags</h2>
+<p>Tags control which sockets and plugs are able to link together. Smithy uses the same tag system that already <a href="http://docs.unity3d.com/Manual/Tags.html">exists within Unity</a>. However, Smithy ignores tags on GameObjects and only considers tags on nodes themselves.</p>
+<p>To add and remove tags from a node, click the <button type="button" class="btn btn-info btn-xs"><i class="fa fa-tag fa-lg"></i></button> on the Node Editor <a href="../adapter#node-pills">Node Pill</a> to open the <a href="../manager#tag-manager">Tag Manager Window</a>, or assign tags in the <a href="#node-settings-window">Node Settings Window</a>.</p>
+<p>During <a href="../../generation">generation</a> Smithy will take a socket node and look for any plug nodes that have one or more matching tags. Therefore:</p>
+<ul>
+<li>For plugs to be used, they must share one or more tags with a socket.</li>
+<li>For sockets to be filled, they must share one or more tags with at least one plug.</li>
+</ul>
+<p><img alt="Example tag relationships" src="../../img/tag-relationships.png" /></p>
+<p>Smithy will <a href="../adapter#warning-panel">automatically notify you</a> about nodes that are missing tags. Also, the <a href="../manager#diagnose_and_repair">Smithy Manager's Diagnose function</a> will alert you to any tags that exist only on sockets or only on tags (and are therefore prevented from generating).</p>
+<p>The Manager's <a href="../manager#aggressive-repair">aggressive repair function</a> can find an eliminate nodes with orphaned tags, as well.</p>
+<h2 id="generation-probability">Generation Probability</h2>
+<p>Selection is extremely important to procedural generation, and Smithy includes tools to carefully manage how frequently plugs are selected and how often sockets are filled.</p>
+<h3 id="socket-fill-probability">Socket Fill Probability</h3>
+<p>Socket fill probability is fairly straightforward - it is a percentage that determines how often the socket will generate a plug. Sockets with low values will rarely generate a plug, whereas sockets with a 100% socket fill probability will <em>always</em> generate a plug.</p>
+<p>When using <a href="../manager#probability-preset-manager">Probability Presets</a>, sockets use the <a href="../manager#percenatge">Percentage</a> preset value.</p>
+<h3 id="plug-weight">Plug Weight</h3>
+<p>During plug <a href="../../generation">generation</a> for a socket node, Smithy collects all plugs that have <a href="#tags">tags</a> that match the socket's tags. From this collection, Smithy makes a selection based on weight.</p>
+<p>Weight values refer to how likely it is that a plug will be chosen, with higher weights being picked more frequently. A weight of 2 will be selected twice as often as a weight of 1, and a weight of 4 twice as often as a weight of 2.  </p>
+<p>Weights can be thought of as instances of a selection in an array of all cumulative selections. This is shown more clearly in a sample set with a cumulative weight of 22:</p>
+<table>
+<thead>
+<tr>
+<th>Item</th>
+<th>Weight</th>
+<th>Selection Frequency</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>A</td>
+<td>1</td>
+<td>4.6%</td>
+</tr>
+<tr>
+<td>B</td>
+<td>2</td>
+<td>9.1%</td>
+</tr>
+<tr>
+<td>C</td>
+<td>4</td>
+<td>18.41%</td>
+</tr>
+<tr>
+<td>D</td>
+<td>5</td>
+<td>22.3%</td>
+</tr>
+<tr>
+<td>E</td>
+<td>10</td>
+<td>45.75%</td>
+</tr>
+</tbody>
+</table>
+<p>If this is confusing, <strong>don't panic</strong>! The <a href="../manager/#probability-preset-manager">Probability Preset Manager</a> has visual tools that will help you determine socket fill probabilities and plug weights that are perfect for your project, and <a href="#presets">as you'll see below</a>, you'll never have to individually set these numbers (although you can if you want)</p>
+<hr />
+<h1 id="node-settings-window">Node Settings Window</h1>
+<p>The Node Settings Window is activated by the <button type="button" class="btn btn-primary btn-xs"><i class="fa fa-gear fa-lg"></i></button> button on the <a href="../adapter#node-pills">Node Editor Node Pill</a> and <a href="../adapter#socket-view-panel">Object Assembler Socket Pill</a>. It contains controls for fine-tuning nodes, as well as adding special generation options for specific nodes.</p>
+<p>Node <a href="#type">type</a> can be set by clicking the node type icon in the top-left corner of the window.</p>
+<h2 id="name">Name</h2>
+<p>Click the <button type="button" class="btn btn-default btn-xs"><i class="fa fa-pencil fa-lg"></i></button> button to set the name of the Node. Nodes, by default, are named based on their <code>Vector3</code> position offset from the Adapter's transform origin.
+<div class="well">
+  It is <b>strongly recommended</b> to name nodes when working with complex node structures.
+</div></p>
+<h2 id="position">Position</h2>
+<p>Nodes are configured in relation to the origin of the Transform of the GameObject their connected to. This means that properties of a node like position, connection vector, rotation, and scale are properties <strong>relative to</strong> the Transform. If the Transform is translated, rotated or scaled, the nodes will be modified likewise.</p>
+<p>For this reason, the Position value can be more correctly thought of as a position <em>offset</em> from the Transform origin.</p>
+<p>Changing the values here will move the node position in world space relative to the Transform origin.</p>
+<h2 id="rotation">Rotation</h2>
+<p>To-do.</p>
+<h2 id="scale">Scale</h2>
+<p>To-do.</p>
+<h2 id="connection-vector">Connection Vector</h2>
+<p>The connection vector is the vector of attachment between plugs and sockets. <a href="#../generation">Generated</a> plug objects will be oriented so that their connection vectors (in world space) are inverse vectors.</p>
+<p>In short: generated plugs will be oriented so that their connection vector and the socket connection vectors are pointing towards each other, like so:</p>
+<p><img alt="Connection Vector Explanation" src="../../img/connection-vectors" /></p>
+<p>To avoid gimbal lock, the connection vector is a <code>Vector4</code>. It can be set directly in this window, or it can be set in the Node Editor's <a href="../adapter#edit-node-tab">Adjust Connection Angle Tab</a>, or by using a snap option.</p>
+<h3 id="connection-angle-snap-options">Connection Angle Snap Options</h3>
+<table>
+<thead>
+<tr>
+<th align="center"></th>
+<th align="center"></th>
+<th align="center"></th>
+<th align="center"></th>
+<th align="center"></th>
+<th align="center"></th>
+<th align="center"></th>
+<th align="center"></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center"><button type="button" class="btn btn-primary btn-sm"><i class="fa fa-arrow-up fa-3x"></i></button></td>
+<td align="center"><button type="button" class="btn btn-primary btn-sm"><i class="fa fa-arrow-down fa-3x"></i></button></td>
+<td align="center"><button type="button" class="btn btn-primary btn-sm"><i class="fa fa-arrow-left fa-3x"></i></button></td>
+<td align="center"><button type="button" class="btn btn-primary btn-sm"><i class="fa fa-arrow-right fa-3x"></i></button></td>
+<td align="center"><button type="button" class="btn btn-primary btn-sm"><h4>&nbsp;&nbsp;&nbsp;<strong>F</strong>&nbsp;&nbsp;&nbsp;</h4></button></td>
+<td align="center"><button type="button" class="btn btn-primary btn-sm"><h4>&nbsp;&nbsp;&nbsp;<strong>N</strong>&nbsp;&nbsp;&nbsp;</h4></button></td>
+<td align="center"><button type="button" class="btn btn-primary btn-sm"><h4>&nbsp;&nbsp;&nbsp;<strong>B</strong>&nbsp;&nbsp;&nbsp;</h4></button></td>
+<td align="center"><button type="button" class="btn btn-primary btn-sm"><h4>&nbsp;&nbsp;&nbsp;<strong>C</strong>&nbsp;&nbsp;&nbsp;</h4></button></td>
+</tr>
+<tr>
+<td align="center">World Up</td>
+<td align="center">World Down</td>
+<td align="center">World Left</td>
+<td align="center">World Right</td>
+<td align="center">World Forward</td>
+<td align="center">World Backward</td>
+<td align="center">Nearest Surface Normal</td>
+<td align="center">Align to Object Center</td>
+</tr>
+</tbody>
+</table>
+<p>Clicking any of these options will directly set the node's connection vector.</p>
+<h2 id="tag-manager">Tag Manager</h2>
+<p><img alt="Tag Manager" src="../../img/tag-manager.png" /></p>
+<p>The Tag Manager can quickly add and remove <a href="#tags">tags</a> from a node.</p>
+<p>The left panel contains all the tags available in the project. Clicking one will assign that tag to the current node.</p>
+<p>The right panel contains all tags assigned to the current node. Clicking a tag in this panel will remove it from the node.</p>
+<p>Use the <button type="button" class="btn btn-info btn-xs"><i class="fa fa-filter fa-lg"></i></button> filter text box to filter tags by name. You can also click the <button type="button" class="btn btn-primary btn-xs"><i class="fa fa-list-alt fa-lg"></i></button> toggle to hide and show the default Unity tags (Untagged, Respawn, Finish, EditorOnly, MainCamera, Player, and GameController)</p>
+<p>Clicking the <button type="button" class="btn btn-primary btn-xs"><i class="fa fa-tag fa-lg"></i>+</button> button will open a pop-up that will allow you to add a new tag within the Node Settings Window.</p>
+<h2 id="probability-settings">Probability Settings</h2>
+<p>This control sets the <a href="#socket-fill-probability">socket fill probability</a> or <a href="#plug-weight">plug selection weight</a>.</p>
+<h3 id="presets">Presets</h3>
+<p>These presets hold the percentage and weight values set in the <a href="../manager/presets">preset manager</a>. Clicking a preset icon will assign its value to the currently selected node.</p>
+<h2 id="generation-jitter">Generation Jitter</h2>
+<p>"Jitter" in Smithy is a maximum allowed deviation value. Generated objects will be affected anywhere from 0% to the maximum of the jitter value. For example, a size jitter of 1% would cause all generated instances of this node's GameObject to scale up by 0-1%.</p>
+<p><img alt="Jitter Examples" src="../../img/jitter-examples.png" /></p>
+<p>Small amounts of jitter are <strong>extremely</strong> useful in making procedurally generated assets look hand-crafted.</p>
+<div class="well">
+  In Smithy, all Jitter is <b>additive</b>. Smithy will add jitter values from the socket to the values from its plug, and use the sum as the new maximum deviation when calculating jitter.
+</div>
+
+<p>Jitter can be disabled during <a href="../../generation#parameters">generator instantiation</a>.</p>
+<h3 id="position-jitter">Position Jitter</h3>
+<p>How far the generated object can deviate from the node position. Uniform scaling adds the same value to all axes, while individual scaling can generate different values for each axis.</p>
+<h3 id="rotation-jitter">Rotation Jitter</h3>
+<p>How far the generated object can deviate from the its default transform rotation. This is applied <strong>after</strong> the <a href="#connection-vectors">connection vectors</a> are aligned after instantiation. Uniform scaling adds the same value to all axes, while individual scaling can generate different values for each axis.</p>
+<h3 id="size-jitter">Size Jitter</h3>
+<p>How far the generated object can deviate from its default scale. This is applied <strong>after</strong> scaling based on the parent object's scale. Uniform scaling scales the object by a percentage, whereas individual scaling applies a scale modifier per axis.</p>
+<h2 id="material-options">Material Options</h2>
+<p>Additional materials (and weights) can be added to any node. On generation, these materials are selected by weight and applied to the plug object.</p>
+<p>Like jitter, material options are <strong>additive</strong>. Smithy will collect materials from both the plug and the socket before applying the material to the plug. This is useful if the socket should determine the plug object's material (e.g. keeping materials consistent across an object)</p>
+<p><img alt="Material Option Example" src="../../img/panel_material-options.png" /></p>
+<p>The material options panel includes a control to set the weight of the default material. Default, in this case, means the material the plug is assigned as a prefab. The defauly weight is <code>100</code>.</p>
+<p>Materials can be added by clicking the <button type="button" class="btn btn-success btn-xs"><i class="fa fa-circle fa-lg"></i>+</button> button. It will open the following window:</p>
+<p><img alt="Material Select Window" src="../../img/window_material-select.png" /></p>
+<p>From here, click a material to assign it to the node. Each material selection will have its own listing in the material options panel.</p>
+<p>The input field sets the material option's selection weight, which operates identically to the <a href="#plug-weight">plug selection weight</a>. Clicking the <button type="button" class="btn btn-primary btn-xs"><i class="fa fa-th fa-lg"></i></button> button will set a <a href="../manager#presets">probability preset</a> weight value for the material, and clicking the <button type="button" class="btn btn-primary btn-xs"><i class="fa fa-bar-chart fa-lg"></i></button> button will open the <a href="../manager/probability-preset-manager">Probability Preset Manager</a>.</p></div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            
+                <center>2016 Evil Wizard Studios</center>
+            
+            <center>Documentation built with <a href="http://www.mkdocs.org/">MkDocs</a>.</center>
+        </footer>
+
+        <script src="../../js/jquery-1.10.2.min.js"></script>
+        <script src="../../js/bootstrap-3.0.3.min.js"></script>
+        <script src="../../js/highlight.pack.js"></script>
+        <script src="../../js/base.js"></script>
+    </body>
+</html>

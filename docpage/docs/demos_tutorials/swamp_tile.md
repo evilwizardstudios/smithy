@@ -127,7 +127,7 @@ If you haven't yet, I recommend checking out the [Quick Start Tutorial](#./quick
 
   Finally, click the yellow <i class="fa fa-save">+</i> icon in the top-right corner of the component, and save the prefab to *Assets/Resources/Finished/Terrain*.
 
-## Test Generation I
+### Test Generation I
 
   We have a socket tagged "Terrain", and we have a plug tagged "Terrain". That's all we need to generate something in Smithy, so let's test it out and make sure we're on the right track.
 
@@ -207,7 +207,7 @@ If you haven't yet, I recommend checking out the [Quick Start Tutorial](#./quick
 
   When you're happy with your jitter range, click the green check mark to commit all changes to the node, then return to the Adapter inspector and click the green <i class="fa fa-save"></i> icon in the top-right corner. Go ahead and disable or delete the Water GameObject in the Hierarchy Tab.
 
-## Test Generation II
+### Test Generation II
 
   Re-enable the base piece in the Hierarchy. In the Adapter Inspector, click the orange **Assembler** tab. Click the blue <i class="fa fa-bolt"></i> (**Run Generator**) button a few times. Here's a sample of what you should see:
 
@@ -305,7 +305,7 @@ If you haven't yet, I recommend checking out the [Quick Start Tutorial](#./quick
 
 ### Copying Adapters
 
-  Don't delete or disable the grass GameObject in the heirarchy. Instead, select and drag all of the remaining grasses from the *Meshes/Grass* folder into the heirarchy, and assign the Moss material to them. You can do this easily by selecting all of the grasses in the Hierarchy Tab and dragging the Moss material into the Inspector Tab.
+  Don't delete or disable the grass GameObject in the hierarchy. Instead, select and drag all of the remaining grasses from the *Meshes/Grass* folder into the hierarchy, and assign the Moss material to them. You can do this easily by selecting all of the grasses in the Hierarchy Tab and dragging the Moss material into the Inspector Tab.
 
   Now, select only "Grass A", the one with the Smithy Adapter on it. Right click on the very top of the Smithy Adapter Inspector and click **"Copy Component"**:
 
@@ -320,7 +320,7 @@ If you haven't yet, I recommend checking out the [Quick Start Tutorial](#./quick
  Save **each** grass object to prefab, through the Smithy adapter, then remove them from the heirarchy.
 
 
-## Test Generation III
+### Test Generation III
 
    Go back to the base piece and run the Assembler generator a few times:
 
@@ -330,17 +330,71 @@ If you haven't yet, I recommend checking out the [Quick Start Tutorial](#./quick
 
 ## Trees
 
+### Sockets
+
   We're going to repeat the grass process with the trees.
 
-  Activate Terrain A in the hierarchy and add a new node layer, named "Trees". Add 6-12 socket nodes, wherever you think is suitable. (Click the <i class="fa fa-eye"></i> button on the inactive layer to reduce visual clutter)
+  Activate Terrain A in the hierarchy and add a new node layer, named "Trees". Add a few socket nodes, wherever you think is suitable (Click the <i class="fa fa-eye"></i> button on the inactive layer to hide the other layers and reduce visual clutter). These trees have pretty wide root systems, though, so it's best to keep them away from the edges.
 
   ![Adding Trees](../img/demo01/25.png)
 
-  Now, select all of these sockets in their layer window and do the following:
+  Now, select all of these sockets in their layer window. Use the techniques we've covered in the last several steps to do the following:
 
-  - Add a Y-axis position offset like we did with the grass, but decrease the Y-value to -0.1
-  - Set all connection vectors to **world up** by clicking the upwards-facing arrow in the connection vector settings panel
-  - Create a new tag, "Tree", and add it to the sockets
-  - Set the probability to <i class="fa fa-star-o"></i> (**Uncommon**)
-  - Apply the [same jitter controls](#grass-layer-settings) that we applied to the grass nodes
-  - Close the Layer Settings Window and save through the adapter.
+- Add a Y-axis position offset like we did with the grass, but decrease the value to -0.1
+- Set all connection vectors to **world up** by clicking the upwards-facing arrow in the connection vector settings panel
+- Create a new tag, "Tree", and add it to the sockets
+- Set the probability to <i class="fa fa-star-o"></i> (**Rare**)
+- Apply a Y-axis rotation jitter control with limits at -180 degrees and +180 degrees.
+- Close the Layer Settings Window and save through the adapter.
+
+### Plugs
+
+  Again, like with the grass, we're going to batch all of our tree objects by defining the plug node on one tree and copying the adapter to the other trees.
+
+  Pull all of the tree meshes from the *Meshes/Trees* folder into the hierarchy. Apply the "Wood" material to them.
+
+  Now, select Tree A, and:
+
+- Add a new unanchored node with the <i class="fa fa-chain-broken">+</i> button
+- Select the node through the palette's **Edit Node** / **Select** mode.
+- Click the downward-facing arrow in the <i class="fa fa-external-link-square"></i> (**Adjust Connection Vector**) snap menu to set the connection vector to **world down**
+- Use the Tag Panel to add the "Tree" tag to the node.
+- Right-click on the Smithy Adapter inspector title and select "Copy Component"
+- Shift-select and paste the component to the rest of the tree objects.
+
+Save each of the trees through the Smithy adapter to the *Finished* folder. Remove them from the hierarchy, and check your work by using the Assembler generator on the base piece. It should generate something like this:
+
+![Checking Trees](../img/demo01/26.png)
+
+If it looks a little off, don't worry. We'll take a final pass near the end and tweak everything to get it perfect. For now, make sure that trees don't have roots hanging off of the edge. If they do, go back into the Terrain A Tree nodes and move them towards the center.
+
+## Branches
+
+  [[[CHANGE THIS -- ALIGN ALL BASES WITH y 0]]]
+
+
+  This part, unfortunately, can't be batched. The good news is that there are only four, and they'll add a ton of variety.
+
+  Go into the *Meshes/Trees/Branches* folder and grab "Branch A". Assign the "Wood" material and add a Smithy Adapter.
+
+  Rotate the branch so you can see the base. You'll notice the branch seems to "clip out" back here because there's no geometry in that area. This is fine, because we're going to manually position the plug node.
+
+  Enter edit mode and keep the palette at default settings. Click one of the vertices near the base of the branch:
+
+  ![Adding the branch plug](../img/demo01/27.png)
+
+  Neither the position nor the connection vector of the node is what we want. Let's change that.
+
+  Enter the **Edit Node** mode from the palette and click the node in the Scene View to select it.
+
+  Now, click the <i class="fa fa-arrows"></i> button in the palette. In the Scene view, manipulate the movement handles to position the node roughly in the middle of the branch's base. Then, inset the node just a little into the body of the branch, like so:
+
+  ![Positioning the branch plug](../img/demo01/28.png)
+
+  Finally, click the button labeled "C" (**"Align to Object Center"**) arrow in the <i class="fa fa-external-link-square"></i> (**Adjust Connection Vector**) snap menu. You might also want to tweak the connection vector manually, depending on how you positioned the node. In the end, the vector should look like this:
+
+  ![Aligning the branch vector](../img/demo01/29.png)
+
+  Add a new tag, "Branch", and save this branch as a prefab through the Smithy Adapter.
+
+  Now, repeat this process for the rest of the branches in the *Meshes/Trees/Branches* folder.
