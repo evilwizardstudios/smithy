@@ -13,9 +13,7 @@
 		<![endif]-->
 		<link href='https://fonts.googleapis.com/css?family=Lato:400,900,300' rel='stylesheet' type='text/css'>
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
-		<!-- script references -->
 		<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.2/jquery.min.js"></script>
-		<!-- Latest compiled and minified JavaScript -->
 		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
 		<link href="css/flatly.css" rel="stylesheet">
 		<link href="css/styles.css" rel="stylesheet">
@@ -44,11 +42,7 @@
 					</div>
 				</div>
 			</div>
-			<!-- /container -->
 		</div>
-		<!-- /navbar wrapper -->
-		<!-- Hero Image
-			================================================== -->
 		<div id="top" class="jumbotron">
 			<div class="container">
 				<h1><b>SMITHY</b></h1>
@@ -67,7 +61,6 @@
 				</div>
 			</div>
 		</div>
-		<!-- /.full -->
 		<section>
 			<div class="container-fluid details"style="margin-top: -50px;">
 				<div class="container" id="start">
@@ -78,49 +71,40 @@
 								hundreds, thousands, or tens of thousands of combinations of Unity GameObjects and their components.
 							</p>
 				</div>
-				<!-- /.row -->
 			</div>
-			<!-- /.container -->
 		</section>
-		<!-- Marketing messaging and featurettes
-			================================================== -->
-		<!-- Wrap the rest of the page in another container to center all the content. -->
 		<div class="container marketing scroll">
 			<br>
 			<div class="row">
 				<div class="col-md-4 text-center">
-					<img class="img-rounded" src="http://placehold.it/140x140">
+					<i class="fa fa-battery-full fa-5x"></i>
 					<h2>Poweful</h2>
 					<p>Use a handful of GameObjects and Materials to quickly create thousands of unique project assets, in-editor or at runtime.</p>
 				</div>
 				<div class="col-md-4 text-center">
-					<img class="img-rounded" src="http://placehold.it/140x140">
+					<i class="fa fa-leaf fa-5x"></i>
 					<h2>Flexible</h2>
 					<p>Built around Unity's Component system, allowing for quick, simple, and seamless integration with existing projects.</p>
 				</div>
 				<div class="col-md-4 text-center">
-					<img class="img-rounded" src="http://placehold.it/140x140">
+					<i class="fa fa-life-saver fa-5x"></i>
 					<h2>Simple</h2>
 					<p>Employs modern UI/UX techniques for an easy-to-use, unobtrusive, frustration-free experience.</p>
 				</div>
 			</div>
-			<!-- /.row -->
 			<br>
-			<!-- Three columns of text below the carousel -->
 			<div class="row">
 				<div class="col-md-5 col-md-offset-1 text-center">
-					<img class="img-rounded" src="http://placehold.it/140x140">
+					<i class="fa fa-flask fa-5x"></i>
 					<h2><span class="text-muted">for </span>Modern Developers</h2>
 					<p>Suitable for both dev-in-a-garage indies and large professional development teams.</p>
 				</div>
 				<div class="col-md-5 text-center">
-					<img class="img-rounded" src="http://placehold.it/140x140">
+					<i class="fa fa-paint-brush fa-5x"></i>
 					<h2><span class="text-muted">for </span>Asset Artists</h2>
 					<p>Create Assets with unparalleled versatility, or revitalize already-released content and reach new users.</p>
 				</div>
 			</div>
-			<!-- /.row -->
-			<!-- START THE FEATURETTES -->
 			<hr class="featurette-divider">
 			<div class="featurette">
 				<img class="featurette-image img-rounded pull-right" src="http://placehold.it/512">
@@ -172,10 +156,8 @@
 				</p>
 			</div>
 		</div>
-			<!-- /END THE FEATURETTES -->
 
 			<br><br><br><br>
-			<!-- DETAILS ASIDE -->
 			<section>
 				<div class="container-fluid details" style="margin-top: -50px;">
 					<div class="container">
@@ -183,12 +165,8 @@
 								<p class="lead section-lead">Smithy comes in a number of releases - choose the one that works for your project and your budget.</p>
 								<p class="section-paragraph pull-right">Not sure? <a href="#">Click here</a> for more information about the differences between editions.</p>
 					</div>
-					<!-- /.row -->
 				</div>
-				<!-- /.container -->
 			</section>
-			<!-- /DETAILS -->
-			<!-- Get Smithy -->
 			<div class="container">
 			<div class="row flat">
 				<div class="col-lg-3 col-md-3 col-xs-6">
@@ -331,7 +309,6 @@
 			<a class="btn-primary btn-lg pull-right" href="#" role="button"><i class="fa fa-bolt"></i>&nbsp;&nbsp; Upgrade your copy of Smithy</a>
 		</div>
 	</div>
-		<!-- /End GET -->
 		<section>
 			<div class="container-fluid details">
 				<div class="container">
@@ -345,11 +322,8 @@
 							<a class="btn-primary btn-lg" href="#" role="button"><i class="fa fa-envelope"></i>&nbsp;&nbsp;E-Mail</a>&nbsp;&nbsp;
 				</div>
 			</div>
-				<!-- /.row -->
 			</div>
-			<!-- /.container -->
 		</section>
-		<!-- FOOTER -->
 		<footer>
 			<div class="row">
 				<div class="col-md-8 col-md-offset-2">
@@ -359,17 +333,15 @@
 			</div>
 		</footer>
 		<a  id="contact"></a>
-		</div><!-- /.container -->
+		</div>
 		<script>$(".scroll").click(function(event){
 			event.preventDefault();
-			//calculate destination place
 			var dest=0;
 			if($(this.hash).offset().top > $(document).height()-$(window).height()){
 			     dest=$(document).height()-$(window).height();
 			}else{
 			     dest=$(this.hash).offset().top;
 			}
-			//go to destination
 			$('html,body').animate({scrollTop:dest - 75}, 1000,'swing');
 			});
 		</script>
